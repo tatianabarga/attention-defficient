@@ -59,3 +59,28 @@ To learn more about Next.js, take a look at the following resources:
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+ Name of the Project
+
+ Overview of the project
+
+ Link to your wireframes/prototype
+https://www.figma.com/file/9Cnf0jjF8OgMIuGP9MUcFS/Capstone?type=design&node-id=1-3&mode=design&t=4K7bDA8t1TBrdbj7-0
+
+ Link to the ERD
+https://drawsql.app/teams/tatiana-bargas-team/diagrams/capstone
+
+ Link to the deployed project
+
+ Link to your project board (yes...even though it is a part of the repo)
+ https://github.com/users/tatianabarga/projects/4/views/1
+
+ Description of the user
+
+ List of features
+
+ Screenshots of your project
+
+ List of contributors and links to their GH profiles
+
+ Link to Loom video walkthrough of your app (no more than 1 minute long! Make it great)
