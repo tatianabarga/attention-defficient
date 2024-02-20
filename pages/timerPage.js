@@ -1,5 +1,6 @@
 import React from 'react';
+import App from '../components/Timer';
 
 export default function TimerPage() {
-  return <div>timer page</div>;
+  return <App />;
 }
