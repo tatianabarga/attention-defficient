@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { Timers } from '../components/Timers';
 import { useAuth } from './context/authContext';
 import Loading from '../components/Loading';
 import Signin from '../components/Signin';
@@ -17,6 +18,7 @@ const ViewDirectorBasedOnUserAuthStatus = ({ component: Component, pageProps }) 
     return (
       <>
         <NavBarAuth /> {/* NavBar only visible if user is logged in and is in every view */}
+        <Timers />
         <div className="container">
           <Component {...pageProps} />
         </div>
