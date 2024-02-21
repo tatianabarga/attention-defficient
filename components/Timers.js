@@ -17,11 +17,13 @@ function Timer25({ expiryTimestamp }) {
   } = useTimer({ expiryTimestamp, onExpire: () => console.warn('onExpire called') });
 
   return (
-    <div style={{ textAlign: 'center', padding: '20px', border: 'solid' }}>
-      <h1>react-timer-hook </h1>
+    <div style={{ textAlign: 'center', margin: '5px', border: 'solid' }}>
       <p>25 min</p>
-      <div style={{ fontSize: '100px' }}>
-        <span>{String(days).padStart(2, '0')}</span>:<span>{String(hours).padStart(2, '0')}</span>:<span>{String(minutes).padStart(2, '0')}</span>:<span>{String(seconds).padStart(2, '0')}</span>
+      <div style={{ fontSize: '30px' }}>
+        <span>{String(days).padStart(2, '0')}</span>:
+        <span>{String(hours).padStart(2, '0')}</span>:
+        <span>{String(minutes).padStart(2, '0')}</span>:
+        <span>{String(seconds).padStart(2, '0')}</span>
       </div>
       <p>{isRunning ? 'Running' : 'Not running'}</p>
       <Button onClick={start}>Start</Button>
@@ -53,9 +55,9 @@ function Timer5({ expiryTimestamp }) {
   } = useTimer({ expiryTimestamp, onExpire: () => console.warn('onExpire called') });
 
   return (
-    <div style={{ textAlign: 'center', padding: '20px', border: 'solid' }}>
+    <div style={{ textAlign: 'center', margin: '5px', border: 'solid' }}>
       <p>5 min</p>
-      <div style={{ fontSize: '100px' }}>
+      <div style={{ fontSize: '30px' }}>
         <span>{String(days).padStart(2, '0')}</span>:
         <span>{String(hours).padStart(2, '0')}</span>:
         <span>{String(minutes).padStart(2, '0')}</span>:
@@ -91,10 +93,13 @@ function Timer30({ expiryTimestamp }) {
   } = useTimer({ expiryTimestamp, onExpire: () => console.warn('onExpire called') });
 
   return (
-    <div style={{ textAlign: 'center', padding: '20px', border: 'solid' }}>
+    <div style={{ textAlign: 'center', margin: '5px', border: 'solid' }}>
       <p>30 min</p>
-      <div style={{ fontSize: '100px' }}>
-        <span>{String(days).padStart(2, '0')}</span>:<span>{String(hours).padStart(2, '0')}</span>:<span>{String(minutes).padStart(2, '0')}</span>:<span>{String(seconds).padStart(2, '0')}</span>
+      <div style={{ fontSize: '30px' }}>
+        <span>{String(days).padStart(2, '0')}</span>:
+        <span>{String(hours).padStart(2, '0')}</span>:
+        <span>{String(minutes).padStart(2, '0')}</span>:
+        <span>{String(seconds).padStart(2, '0')}</span>
       </div>
       <p>{isRunning ? 'Running' : 'Not running'}</p>
       <Button onClick={start}>Start</Button>
@@ -124,7 +129,7 @@ Timer30.propTypes = {
   expiryTimestamp: PropTypes.instanceOf(Date).isRequired,
 };
 
-export default function App() {
+function Timers() {
   const time = new Date();
   const time25 = time.setSeconds(time.getSeconds() + 1500); // 25 minutes timer
   const time5 = time.setSeconds(time.getSeconds() + 300); // 5 minutes timer
@@ -138,3 +143,10 @@ export default function App() {
     </div>
   );
 }
+
+export {
+  Timer25,
+  Timer5,
+  Timer30,
+  Timers,
+};

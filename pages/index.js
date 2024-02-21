@@ -1,22 +1,33 @@
-// import { Button } from 'react-bootstrap'; // TODO: COMMENT IN FOR AUTH
-// import { signOut } from '../utils/auth'; // TODO: COMMENT IN FOR AUTH
-import { useAuth } from '../utils/context/authContext'; // TODO: COMMENT IN FOR AUTH
+import { useEffect, useState } from 'react';
+import Link from 'next/link';
+import { Button } from 'react-bootstrap';
+import { useAuth } from '../utils/context/authContext';
+import { getLists } from '../api/listData';
+import ListCard from '../components/ListCard';
 
 function Home() {
-  const { user } = useAuth(); // TODO: COMMENT IN FOR AUTH
+  const [lists, setLists] = useState;
+  const { user } = useAuth;
 
-  // const user = { displayName: 'Dr. T' }; // TODO: COMMENT OUT FOR AUTH
+  const getAllTheLists = () => {
+    getLists(user.uid).then(setLists);
+  };
+
+  useEffect(() => {
+    getAllTheLists();
+  }, []);
+
   return (
-    <div
-      className="text-center d-flex flex-column justify-content-center align-content-center"
-      style={{
-        height: '90vh',
-        padding: '30px',
-        maxWidth: '400px',
-        margin: '0 auto',
-      }}
-    >
-      <h1>Hello {user.displayName}! </h1>
+    <div className="text-center my-4">
+      <Link href="/lists/new" passHref>
+        <Button>Add A List</Button>
+      </Link>
+      <div className="d-flex flex-wrap">
+        {/* TODO: map over books here using BookCard component */}
+        {lists.map((list) => (
+          <ListCard key={list.firebaseKey} listObj={list} onUpdate={getAllTheLists} />
+        ))}
+      </div>
     </div>
   );
 }
