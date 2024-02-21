@@ -6,8 +6,8 @@ import { getLists } from '../api/listData';
 import ListCard from '../components/ListCard';
 
 function Home() {
-  const [lists, setLists] = useState;
-  const { user } = useAuth;
+  const [lists, setLists] = useState([]);
+  const { user } = useAuth();
 
   const getAllTheLists = () => {
     getLists(user.uid).then(setLists);
@@ -19,15 +19,15 @@ function Home() {
 
   return (
     <div className="text-center my-4">
-      <Link href="/lists/new" passHref>
-        <Button>Add A List</Button>
-      </Link>
       <div className="d-flex flex-wrap">
-        {/* TODO: map over books here using BookCard component */}
+        {/* TODO: map over lists here using ListCard component */}
         {lists.map((list) => (
           <ListCard key={list.firebaseKey} listObj={list} onUpdate={getAllTheLists} />
         ))}
       </div>
+      <Link href="/lists/new" passHref>
+        <Button>Add A List</Button>
+      </Link>
     </div>
   );
 }
