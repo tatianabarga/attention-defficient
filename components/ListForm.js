@@ -41,7 +41,6 @@ function ListForm({ obj }) {
     <Form onSubmit={handleSubmit}>
       <h2 className="text-white mt-5">{obj.firebaseKey ? 'Update' : 'Create'} List</h2>
 
-      {/* TITLE INPUT  */}
       <FloatingLabel controlId="floatingInput1" label="List Label" className="mb-3">
         <Form.Control
           type="text"
@@ -53,7 +52,6 @@ function ListForm({ obj }) {
         />
       </FloatingLabel>
 
-      {/* SUBMIT BUTTON  */}
       <Button type="submit">{obj.firebaseKey ? 'Update' : 'Create'} List</Button>
     </Form>
   );

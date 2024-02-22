@@ -14,6 +14,19 @@ const getLists = (uid) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+// TODO: GET SINGLE LIST
+const getSingleList = (firebaseKey) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/lists/${firebaseKey}.json`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(data))
+    .catch(reject);
+});
+
 // TODO: CREATE BOOK
 const createList = (payload) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/lists.json`, {
@@ -46,4 +59,5 @@ export {
   getLists,
   updateList,
   createList,
+  getSingleList,
 };
