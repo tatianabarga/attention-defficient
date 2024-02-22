@@ -21,6 +21,7 @@ function ListCard({ listObj }) {
 
   useEffect(() => {
     getItemsByList(listObj.firebaseKey).then(setItems);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
