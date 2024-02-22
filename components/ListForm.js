@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, FloatingLabel, Form } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import { useAuth } from '../utils/context/authContext';
@@ -10,9 +10,13 @@ const initialState = {
 };
 
 function ListForm({ obj }) {
-  const [formInput, setFormInput] = useState(initialState);
+  const [formInput, setFormInput] = useState({ ...initialState, ...obj });
   const router = useRouter();
   const { user } = useAuth();
+
+  useEffect(() => {
+    setFormInput({ ...initialState, ...obj });
+  }, [obj]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -61,6 +65,7 @@ ListForm.propTypes = {
   obj: PropTypes.shape({
     label: PropTypes.string,
     firebaseKey: PropTypes.string,
+    uid: PropTypes.string,
   }),
 };
 
