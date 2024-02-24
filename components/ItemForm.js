@@ -56,17 +56,20 @@ function ItemForm({ obj }) {
   };
 
   const handleChangeCheck = (e) => {
-    const { value } = e.target;
-    setSelectedStatus((prevSelectedStatus) => {
-      const newSelectedStatus = new Set(prevSelectedStatus);
-      if (newSelectedStatus.has(value)) {
-        newSelectedStatus.delete(value);
-      } else {
-        newSelectedStatus.add(value);
-      }
-      const updatedStatus = Array.from(newSelectedStatus);
-      return updatedStatus;
-    });
+    const { value, checked } = e.target;
+    if (value === '1') {
+      formInput.notStarted = true;
+      formInput.inProgress = false;
+      formInput.done = false;
+    } else if (value === '2') {
+      formInput.notStarted = false;
+      formInput.inProgress = true;
+      formInput.done = false;
+    } else if (value === '3') {
+      formInput.notStarted = false;
+      formInput.inProgress = false;
+      formInput.done = true;
+    }
   };
 
   return (
@@ -109,13 +112,25 @@ function ItemForm({ obj }) {
       </FloatingLabel>
 
       <ToggleButtonGroup type="checkbox" className="mb-2">
-        <ToggleButton id="tbg-check-1" value="1" onChange={handleChangeCheck} checked={selectedStatus.includes('1')}>
+        <ToggleButton
+          id="tbg-radio-1"
+          value={1}
+          onChange={handleChangeCheck}
+        >
           Not Started
         </ToggleButton>
-        <ToggleButton id="tbg-check-2" value="2" onChange={handleChangeCheck} checked={selectedStatus.includes('2')}>
+        <ToggleButton
+          id="tbg-radio-2"
+          value={2}
+          onChange={handleChangeCheck}
+        >
           In Progress
         </ToggleButton>
-        <ToggleButton id="tbg-check-3" value="3" onChange={handleChangeCheck} checked={selectedStatus.includes('3')}>
+        <ToggleButton
+          id="tbg-radio-3"
+          value={3}
+          onChange={handleChangeCheck}
+        >
           Done
         </ToggleButton>
       </ToggleButtonGroup>
