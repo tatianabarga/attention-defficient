@@ -3,16 +3,13 @@ import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { getSingleItem } from '../../api/itemData';
 import ItemCard from '../../components/ItemCard';
-// import { Button } from 'react-bootstrap';
 
 export default function ViewItem() {
   const [item, setItem] = useState([]);
   const router = useRouter();
 
-  // TODO: grab firebaseKey from url
   const { firebaseKey } = router.query;
 
-  // TODO: make call to API layer to get the data
   useEffect(() => {
     getSingleItem(firebaseKey).then(setItem);
   }, [firebaseKey]);

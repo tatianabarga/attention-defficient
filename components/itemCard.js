@@ -6,16 +6,13 @@ import { useRouter } from 'next/router';
 import { deleteItem } from '../api/itemData';
 
 export default function ItemCard({ itemObj }) {
-  // FOR DELETE, WE NEED TO REMOVE THE BOOK AND HAVE THE VIEW RERENDER,
-  // SO WE PASS THE FUNCTION FROM THE PARENT THAT GETS THE BOOKS
-
   const router = useRouter();
 
   const onUpdate = () => {
     router.push('/');
   };
 
-  const deleteThisBook = () => {
+  const deleteThisItem = () => {
     if (window.confirm(`Delete ${itemObj.label}?`)) {
       deleteItem(itemObj.firebaseKey).then(() => onUpdate());
     }
@@ -38,11 +35,10 @@ export default function ItemCard({ itemObj }) {
         <p>
           {status}
         </p>
-        {/* DYNAMIC LINK TO EDIT THE LIST DETAILS  */}
         <Link href={`/items/edit/${itemObj.firebaseKey}`} passHref>
           <Button variant="info">EDIT</Button>
         </Link>
-        <Button variant="danger" onClick={deleteThisBook} className="m-2">
+        <Button variant="danger" onClick={deleteThisItem} className="m-2">
           DELETE
         </Button>
       </Card.Body>

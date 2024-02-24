@@ -85,7 +85,6 @@ function ItemForm({ obj }) {
         />
       </FloatingLabel>
 
-      {/* List SELECT  */}
       <FloatingLabel controlId="floatingSelect" label="List">
         <Form.Select
           aria-label="List"
@@ -109,7 +108,6 @@ function ItemForm({ obj }) {
         </Form.Select>
       </FloatingLabel>
 
-      {/* STATUS SELECT  */}
       <ToggleButtonGroup type="checkbox" className="mb-2">
         <ToggleButton id="tbg-check-1" value="1" onChange={handleChangeCheck} checked={selectedStatus.includes('1')}>
           Not Started
@@ -122,7 +120,6 @@ function ItemForm({ obj }) {
         </ToggleButton>
       </ToggleButtonGroup>
 
-      {/* SUBMIT BUTTON  */}
       <Button type="submit">{obj.firebaseKey ? 'Update' : 'Create'} Item</Button>
     </Form>
   );

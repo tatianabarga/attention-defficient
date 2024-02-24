@@ -30,7 +30,6 @@ function Timer25({ expiryTimestamp }) {
       <Button onClick={pause}>Pause</Button>
       <Button onClick={resume}>Resume</Button>
       <Button onClick={() => {
-        // Restarts to 25 minutes timer
         const time = new Date();
         time.setSeconds(time.getSeconds() + 1500);
         restart(time);
@@ -68,7 +67,6 @@ function Timer5({ expiryTimestamp }) {
       <Button onClick={pause}>Pause</Button>
       <Button onClick={resume}>Resume</Button>
       <Button onClick={() => {
-        // Restarts to 5 minutes timer
         const time = new Date();
         time.setSeconds(time.getSeconds() + 300);
         restart(time);
@@ -106,7 +104,6 @@ function Timer30({ expiryTimestamp }) {
       <Button onClick={pause}>Pause</Button>
       <Button onClick={resume}>Resume</Button>
       <Button onClick={() => {
-        // Restarts to 30 minutes timer
         const time = new Date();
         time.setSeconds(time.getSeconds() + 1800);
         restart(time);

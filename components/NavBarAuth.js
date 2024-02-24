@@ -8,7 +8,6 @@ import {
   Button,
 } from 'react-bootstrap';
 import { signOut } from '../utils/auth';
-// import { Timer25 } from './Timer';
 
 export default function NavBarAuth() {
   return (
@@ -23,9 +22,6 @@ export default function NavBarAuth() {
             <Link passHref href="/">
               <Nav.Link>Home</Nav.Link>
             </Link>
-            {/* <Navbar.Brand>
-              <Timer25 />
-            </Navbar.Brand> */}
             <Link passHref href="/todoPage">
               <Nav.Link>To Do Lists</Nav.Link>
             </Link>
