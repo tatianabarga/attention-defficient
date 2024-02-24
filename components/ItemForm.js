@@ -17,15 +17,15 @@ const initialState = {
 };
 
 function ItemForm({ obj }) {
-  const [formInput, setFormInput] = useState(initialState);
+  const [formInput, setFormInput] = useState({ ...initialState, ...obj });
   const router = useRouter();
   const { user } = useAuth();
   const [selectedStatus, setSelectedStatus] = useState([]);
   const [lists, setLists] = useState([]);
 
   useEffect(() => {
-    if (obj.firebaseKey) setFormInput(obj);
-  }, [obj, user]);
+    setFormInput({ ...initialState, ...obj });
+  }, [obj]);
 
   useEffect(() => {
     getLists(user.uid).then(setLists);
@@ -43,13 +43,13 @@ function ItemForm({ obj }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (obj.firebaseKey) {
-      updateItem(formInput).then(() => router.push(`/lists/${obj.firebaseKey}`));
+      updateItem(formInput).then(() => router.push(`/items/${obj.firebaseKey}`));
     } else {
       const payload = { ...formInput, uid: user.uid };
-      createItem(payload).then(({ label }) => {
-        const patchPayload = { firebaseKey: label };
+      createItem(payload).then(({ name }) => {
+        const patchPayload = { firebaseKey: name };
         updateItem(patchPayload).then(() => {
-          router.push(`/items/${obj.firebaseKey}`);
+          router.push('/');
         });
       });
     }
