@@ -2,40 +2,33 @@ import React from 'react';
 import { useTimer } from 'react-timer-hook';
 import { Button } from 'react-bootstrap';
 import PropTypes from 'prop-types';
+import TimerEndedModal from './TimerEndedModal';
 
 function Timer25({ expiryTimestamp }) {
   const {
     seconds,
     minutes,
-    hours,
-    days,
-    isRunning,
-    start,
     pause,
     resume,
     restart,
-  } = useTimer({ expiryTimestamp, onExpire: () => console.warn('onExpire called') });
+  } = useTimer({ expiryTimestamp, onExpire: () => TimerEndedModal('Focus') });
 
   return (
     <div style={{ textAlign: 'center', margin: '5px', border: 'solid' }}>
-      <p>25 min</p>
+      <p>Focus (25min)</p>
       <div style={{ fontSize: '30px' }}>
-        <span>{String(days).padStart(2, '0')}</span>:
-        <span>{String(hours).padStart(2, '0')}</span>:
         <span>{String(minutes).padStart(2, '0')}</span>:
         <span>{String(seconds).padStart(2, '0')}</span>
       </div>
-      <p>{isRunning ? 'Running' : 'Not running'}</p>
-      <Button onClick={start}>Start</Button>
-      <Button onClick={pause}>Pause</Button>
-      <Button onClick={resume}>Resume</Button>
       <Button onClick={() => {
         const time = new Date();
         time.setSeconds(time.getSeconds() + 1500);
         restart(time);
       }}
-      >Restart
+      >Start
       </Button>
+      <Button onClick={pause}>Pause</Button>
+      <Button onClick={resume}>Resume</Button>
     </div>
   );
 }
@@ -44,10 +37,6 @@ function Timer5({ expiryTimestamp }) {
   const {
     seconds,
     minutes,
-    hours,
-    days,
-    isRunning,
-    start,
     pause,
     resume,
     restart,
@@ -55,24 +44,20 @@ function Timer5({ expiryTimestamp }) {
 
   return (
     <div style={{ textAlign: 'center', margin: '5px', border: 'solid' }}>
-      <p>5 min</p>
+      <p>Short Break (5min)</p>
       <div style={{ fontSize: '30px' }}>
-        <span>{String(days).padStart(2, '0')}</span>:
-        <span>{String(hours).padStart(2, '0')}</span>:
         <span>{String(minutes).padStart(2, '0')}</span>:
         <span>{String(seconds).padStart(2, '0')}</span>
       </div>
-      <p>{isRunning ? 'Running' : 'Not running'}</p>
-      <Button onClick={start}>Start</Button>
-      <Button onClick={pause}>Pause</Button>
-      <Button onClick={resume}>Resume</Button>
       <Button onClick={() => {
         const time = new Date();
         time.setSeconds(time.getSeconds() + 300);
         restart(time);
       }}
-      >Restart
+      >Start
       </Button>
+      <Button onClick={pause}>Pause</Button>
+      <Button onClick={resume}>Resume</Button>
     </div>
   );
 }
@@ -81,10 +66,6 @@ function Timer30({ expiryTimestamp }) {
   const {
     seconds,
     minutes,
-    hours,
-    days,
-    isRunning,
-    start,
     pause,
     resume,
     restart,
@@ -92,24 +73,20 @@ function Timer30({ expiryTimestamp }) {
 
   return (
     <div style={{ textAlign: 'center', margin: '5px', border: 'solid' }}>
-      <p>30 min</p>
+      <p>Long Break (30min)</p>
       <div style={{ fontSize: '30px' }}>
-        <span>{String(days).padStart(2, '0')}</span>:
-        <span>{String(hours).padStart(2, '0')}</span>:
         <span>{String(minutes).padStart(2, '0')}</span>:
         <span>{String(seconds).padStart(2, '0')}</span>
       </div>
-      <p>{isRunning ? 'Running' : 'Not running'}</p>
-      <Button onClick={start}>Start</Button>
-      <Button onClick={pause}>Pause</Button>
-      <Button onClick={resume}>Resume</Button>
       <Button onClick={() => {
         const time = new Date();
         time.setSeconds(time.getSeconds() + 1800);
         restart(time);
       }}
-      >Restart
+      >Start
       </Button>
+      <Button onClick={pause}>Pause</Button>
+      <Button onClick={resume}>Resume</Button>
     </div>
   );
 }
