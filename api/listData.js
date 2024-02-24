@@ -55,9 +55,23 @@ const updateList = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+// TODO: DELETE BOOK
+const deleteList = (firebaseKey) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/lists/${firebaseKey}.json`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => resolve((data)))
+    .catch(reject);
+});
+
 export {
   getLists,
   updateList,
   createList,
   getSingleList,
+  deleteList,
 };
