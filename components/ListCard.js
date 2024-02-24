@@ -3,24 +3,27 @@ import PropTypes from 'prop-types';
 import Card from 'react-bootstrap/Card';
 import Link from 'next/link';
 import { Button } from 'react-bootstrap';
-import { getItemsByList } from '../api/itemData';
+import { deleteItem, getItemsByList } from '../api/itemData';
 import { deleteList } from '../api/listData';
 
 function ListCard({ listObj, onUpdate }) {
-  // FOR DELETE, WE NEED TO REMOVE THE BOOK AND HAVE THE VIEW RERENDER,
-  // SO WE PASS THE FUNCTION FROM THE PARENT THAT GETS THE BOOKS
-  const deleteThisList = () => {
-    if (window.confirm(`Delete ${listObj.label}?`)) {
-      deleteList(listObj.firebaseKey).then(() => onUpdate());
-    }
-  };
-
   const [items, setItems] = useState([]);
 
   useEffect(() => {
     getItemsByList(listObj.firebaseKey).then(setItems);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  // FOR DELETE, WE NEED TO REMOVE THE BOOK AND HAVE THE VIEW RERENDER,
+  // SO WE PASS THE FUNCTION FROM THE PARENT THAT GETS THE BOOKS
+  const deleteThisList = () => {
+    if (window.confirm(`Delete ${listObj.label}?`)) {
+      const promiseArray = items.map((item) => deleteItem(item.firebaseKey));
+      Promise.all(promiseArray)
+        .then(deleteList(listObj.firebaseKey))
+        .then(() => onUpdate());
+    }
+  };
 
   return (
     <Card style={{ width: '18rem', margin: '10px' }}>
