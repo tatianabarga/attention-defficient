@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 import Card from 'react-bootstrap/Card';
 import Link from 'next/link';
 import { Button } from 'react-bootstrap';
+import { useEffect } from 'react';
 // import Link from 'next/link';
 // import { deleteList } from '../api/listData';
 
-function ItemCard({ itemObj }) {
+export default function ItemCard({ itemObj }) {
   // FOR DELETE, WE NEED TO REMOVE THE BOOK AND HAVE THE VIEW RERENDER,
   // SO WE PASS THE FUNCTION FROM THE PARENT THAT GETS THE BOOKS
   // const deleteThisBook = () => {
@@ -54,5 +55,3 @@ ItemCard.propTypes = {
   }).isRequired,
   // onUpdate: PropTypes.func.isRequired,
 };
-
-export default ItemCard;

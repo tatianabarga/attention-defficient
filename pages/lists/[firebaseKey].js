@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { Button } from 'react-bootstrap';
 import viewListDetails from '../../api/mergeData';
 import { getItemsByList } from '../../api/itemData';
-import ItemCard from '../../components/itemCard';
+import ItemCard from '../../components/ItemCard';
 // import { Button } from 'react-bootstrap';
 
 export default function ViewList() {
@@ -23,7 +23,8 @@ export default function ViewList() {
   }, [firebaseKey]);
 
   useEffect(() => {
-    getItemsByList(firebaseKey).then(setItems);
+    getItemsByList(firebaseKey).then((data) => { setItems(data); });
+    // getItemsByList(firebaseKey).then(setItems);
   }, [firebaseKey]);
 
   return (
@@ -36,7 +37,6 @@ export default function ViewList() {
           items.map((item) => (
             <ItemCard
               key={item.firebaseKey}
-              value={item.firebaseKey}
               itemObj={item}
             />
           ))

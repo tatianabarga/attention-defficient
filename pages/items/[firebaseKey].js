@@ -1,8 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import ItemCard from '../../components/itemCard';
 import { getSingleItem } from '../../api/itemData';
+import ItemCard from '../../components/ItemCard';
 // import { Button } from 'react-bootstrap';
 
 export default function ViewItem() {
@@ -18,6 +18,6 @@ export default function ViewItem() {
   }, [firebaseKey]);
 
   return (
-    <ItemCard key={item.firebaseKey} itemObj={item} />
+    <ItemCard key={firebaseKey} itemObj={item} />
   );
 }
