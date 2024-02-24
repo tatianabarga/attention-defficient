@@ -1,21 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-// import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Link from 'next/link';
 import { Button } from 'react-bootstrap';
 import { getItemsByList } from '../api/itemData';
-// import Link from 'next/link';
-// import { deleteList } from '../api/listData';
+import { deleteList } from '../api/listData';
 
-function ListCard({ listObj }) {
+function ListCard({ listObj, onUpdate }) {
   // FOR DELETE, WE NEED TO REMOVE THE BOOK AND HAVE THE VIEW RERENDER,
   // SO WE PASS THE FUNCTION FROM THE PARENT THAT GETS THE BOOKS
-  // const deleteThisBook = () => {
-  //   if (window.confirm(`Delete ${bookObj.title}?`)) {
-  //     deleteBook(bookObj.firebaseKey).then(() => onUpdate());
-  //   }
-  // };
+  const deleteThisList = () => {
+    if (window.confirm(`Delete ${listObj.label}?`)) {
+      deleteList(listObj.firebaseKey).then(() => onUpdate());
+    }
+  };
 
   const [items, setItems] = useState([]);
 
@@ -50,9 +48,9 @@ function ListCard({ listObj }) {
         <Link href={`/lists/${listObj.firebaseKey}`} passHref>
           <Button variant="info">VIEW</Button>
         </Link>
-        {/* <Button variant="danger" onClick={deleteThisBook} className="m-2">
+        <Button variant="danger" onClick={deleteThisList} className="m-2">
           DELETE
-        </Button> */}
+        </Button>
       </Card.Body>
     </Card>
   );
@@ -63,7 +61,7 @@ ListCard.propTypes = {
     label: PropTypes.string,
     firebaseKey: PropTypes.string,
   }).isRequired,
-  // onUpdate: PropTypes.func.isRequired,
+  onUpdate: PropTypes.func.isRequired,
 };
 
 export default ListCard;
