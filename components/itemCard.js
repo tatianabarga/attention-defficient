@@ -1,20 +1,25 @@
 import PropTypes from 'prop-types';
-// import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Link from 'next/link';
 import { Button } from 'react-bootstrap';
-import { useEffect } from 'react';
-// import Link from 'next/link';
-// import { deleteList } from '../api/listData';
+import { useRouter } from 'next/router';
+import { deleteItem } from '../api/itemData';
 
 export default function ItemCard({ itemObj }) {
   // FOR DELETE, WE NEED TO REMOVE THE BOOK AND HAVE THE VIEW RERENDER,
   // SO WE PASS THE FUNCTION FROM THE PARENT THAT GETS THE BOOKS
-  // const deleteThisBook = () => {
-  //   if (window.confirm(`Delete ${bookObj.title}?`)) {
-  //     deleteBook(bookObj.firebaseKey).then(() => onUpdate());
-  //   }
-  // };
+
+  const router = useRouter();
+
+  const onUpdate = () => {
+    router.push('/');
+  };
+
+  const deleteThisBook = () => {
+    if (window.confirm(`Delete ${itemObj.label}?`)) {
+      deleteItem(itemObj.firebaseKey).then(() => onUpdate());
+    }
+  };
 
   let status = 'The status for this item has not been set.';
 
@@ -37,9 +42,9 @@ export default function ItemCard({ itemObj }) {
         <Link href={`/items/edit/${itemObj.firebaseKey}`} passHref>
           <Button variant="info">EDIT</Button>
         </Link>
-        {/* <Button variant="danger" onClick={deleteThisBook} className="m-2">
+        <Button variant="danger" onClick={deleteThisBook} className="m-2">
           DELETE
-        </Button> */}
+        </Button>
       </Card.Body>
     </Card>
   );
@@ -53,5 +58,4 @@ ItemCard.propTypes = {
     inProgress: PropTypes.bool,
     done: PropTypes.bool,
   }).isRequired,
-  // onUpdate: PropTypes.func.isRequired,
 };
