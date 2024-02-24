@@ -65,6 +65,12 @@ function ItemForm({ obj }) {
         newSelectedStatus.add(value);
       }
       const updatedStatus = Array.from(newSelectedStatus);
+      setFormInput((prevState) => ({
+        ...prevState,
+        notStarted: updatedStatus.includes('1'),
+        inProgress: updatedStatus.includes('2'),
+        done: updatedStatus.includes('3'),
+      }));
       return updatedStatus;
     });
   };
