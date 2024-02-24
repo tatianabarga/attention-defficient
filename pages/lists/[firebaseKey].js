@@ -7,24 +7,20 @@ import { Button } from 'react-bootstrap';
 import viewListDetails from '../../api/mergeData';
 import { getItemsByList } from '../../api/itemData';
 import ItemCard from '../../components/ItemCard';
-// import { Button } from 'react-bootstrap';
 
 export default function ViewList() {
   const [listDetails, setListDetails] = useState({});
   const [items, setItems] = useState([]);
   const router = useRouter();
 
-  // TODO: grab firebaseKey from url
   const { firebaseKey } = router.query;
 
-  // TODO: make call to API layer to get the data
   useEffect(() => {
     viewListDetails(firebaseKey).then(setListDetails);
   }, [firebaseKey]);
 
   useEffect(() => {
     getItemsByList(firebaseKey).then((data) => { setItems(data); });
-    // getItemsByList(firebaseKey).then(setItems);
   }, [firebaseKey]);
 
   return (

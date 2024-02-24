@@ -14,7 +14,6 @@ const getLists = (uid) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// TODO: GET SINGLE LIST
 const getSingleList = (firebaseKey) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/lists/${firebaseKey}.json`, {
     method: 'GET',
@@ -27,7 +26,6 @@ const getSingleList = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// TODO: CREATE BOOK
 const createList = (payload) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/lists.json`, {
     method: 'POST',
@@ -41,7 +39,6 @@ const createList = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// TODO: UPDATE BOOK
 const updateList = (payload) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/lists/${payload.firebaseKey}.json`, {
     method: 'PATCH',
@@ -55,7 +52,6 @@ const updateList = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// TODO: DELETE BOOK
 const deleteList = (firebaseKey) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/lists/${firebaseKey}.json`, {
     method: 'DELETE',

@@ -14,8 +14,6 @@ function ListCard({ listObj, onUpdate }) {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // FOR DELETE, WE NEED TO REMOVE THE BOOK AND HAVE THE VIEW RERENDER,
-  // SO WE PASS THE FUNCTION FROM THE PARENT THAT GETS THE BOOKS
   const deleteThisList = () => {
     if (window.confirm(`Delete ${listObj.label}?`)) {
       const promiseArray = items.map((item) => deleteItem(item.firebaseKey));
@@ -44,7 +42,6 @@ function ListCard({ listObj, onUpdate }) {
             Add an Item
           </Button>
         </Link>
-        {/* DYNAMIC LINK TO EDIT THE LIST DETAILS  */}
         <Link href={`/lists/edit/${listObj.firebaseKey}`} passHref>
           <Button variant="info">EDIT</Button>
         </Link>

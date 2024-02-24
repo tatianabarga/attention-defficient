@@ -21,7 +21,6 @@ function Home() {
   return (
     <div className="text-center my-4">
       <div className="d-flex flex-wrap">
-        {/* TODO: map over lists here using ListCard component */}
         {lists.map((list) => (
           <ListCard key={list.firebaseKey} listObj={list} onUpdate={getAllTheLists} />
         ))}
