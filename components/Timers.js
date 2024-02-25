@@ -32,6 +32,7 @@ function Timer25({ expiryTimestamp }) {
           color: '#F1FFFA',
           backgroundColor: '#FE4A4A',
           border: 'none',
+          margin: '10px',
         }}
         onClick={() => {
           const time = new Date();
@@ -45,6 +46,7 @@ function Timer25({ expiryTimestamp }) {
           color: '#F1FFFA',
           backgroundColor: '#FE4A4A',
           border: 'none',
+          margin: '10px',
         }}
         onClick={pause}
       >
@@ -55,6 +57,7 @@ function Timer25({ expiryTimestamp }) {
           color: '#F1FFFA',
           backgroundColor: '#FE4A4A',
           border: 'none',
+          margin: '10px',
         }}
         onClick={resume}
       >
@@ -92,6 +95,7 @@ function Timer5({ expiryTimestamp }) {
           color: '#F1FFFA',
           backgroundColor: '#3E9F95',
           border: 'none',
+          margin: '10px',
         }}
         onClick={() => {
           const time = new Date();
@@ -105,6 +109,7 @@ function Timer5({ expiryTimestamp }) {
           color: '#F1FFFA',
           backgroundColor: '#3E9F95',
           border: 'none',
+          margin: '10px',
         }}
         onClick={pause}
       >
@@ -115,6 +120,7 @@ function Timer5({ expiryTimestamp }) {
           color: '#F1FFFA',
           backgroundColor: '#3E9F95',
           border: 'none',
+          margin: '10px',
         }}
         onClick={resume}
       >
@@ -152,6 +158,7 @@ function Timer30({ expiryTimestamp }) {
           color: '#F1FFFA',
           backgroundColor: '#AF60FF',
           border: 'none',
+          margin: '10px',
         }}
         onClick={() => {
           const time = new Date();
@@ -165,6 +172,7 @@ function Timer30({ expiryTimestamp }) {
           color: '#F1FFFA',
           backgroundColor: '#AF60FF',
           border: 'none',
+          margin: '10px',
         }}
         onClick={pause}
       >
@@ -175,6 +183,7 @@ function Timer30({ expiryTimestamp }) {
           color: '#F1FFFA',
           backgroundColor: '#AF60FF',
           border: 'none',
+          margin: '10px',
         }}
         onClick={resume}
       >

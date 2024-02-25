@@ -24,12 +24,24 @@ function ListCard({ listObj, onUpdate }) {
   };
 
   return (
-    <Card style={{ width: '18rem', margin: '10px' }}>
+    <Card style={{
+      width: '18rem',
+      margin: '10px',
+      backgroundColor: '#34424A',
+      borderRadius: '10px',
+    }}
+    >
       <Card.Body>
-        <Card.Title>{listObj.label}</Card.Title>
+        <Card.Title style={{
+          color: '#F1FFFA',
+        }}
+        >
+          {listObj.label}
+        </Card.Title>
         {
           items.map((item) => (
             <p
+              style={{ color: '#96A6A0' }}
               key={item.firebaseKey}
               value={item.firebaseKey}
             >
@@ -38,17 +50,54 @@ function ListCard({ listObj, onUpdate }) {
           ))
         }
         <Link href="/items/new" key={listObj.firebaseKey} value={listObj.firebaseKey} passHref>
-          <Button>
+          <Button
+            style={{
+              color: '#96A6A0',
+              margin: '8px',
+              backgroundColor: '#34424A',
+              border: 'solid',
+              borderColor: '#96A6A0',
+            }}
+          >
             Add an Item
           </Button>
         </Link>
+        <br />
         <Link href={`/lists/edit/${listObj.firebaseKey}`} passHref>
-          <Button variant="info">EDIT</Button>
+          <Button
+            style={{
+              color: '#F1FFFA',
+              margin: '8px',
+              backgroundColor: '#3E9F95',
+              border: 'none',
+            }}
+            variant="info"
+          >
+            EDIT
+          </Button>
         </Link>
         <Link href={`/lists/${listObj.firebaseKey}`} passHref>
-          <Button variant="info">VIEW</Button>
+          <Button
+            style={{
+              color: '#F1FFFA',
+              margin: '8px',
+              backgroundColor: '#3E9F95',
+              border: 'none',
+            }}
+            variant="info"
+          >
+            VIEW
+          </Button>
         </Link>
-        <Button variant="danger" onClick={deleteThisList} className="m-2">
+        <Button
+          style={{
+            color: '#F1FFFA',
+            margin: '8px',
+            backgroundColor: '#FE4A4A',
+            border: 'none',
+          }}
+          onClick={deleteThisList}
+        >
           DELETE
         </Button>
       </Card.Body>
