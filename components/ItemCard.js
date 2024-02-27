@@ -29,16 +29,47 @@ export default function ItemCard({ itemObj }) {
   }
 
   return (
-    <Card style={{ width: '18rem', margin: '10px' }}>
+    <Card style={{
+      width: '18rem',
+      margin: '10px',
+      backgroundColor: '#34424A',
+      borderRadius: '10px',
+    }}
+    >
       <Card.Body>
-        <Card.Title>{itemObj.label}</Card.Title>
-        <p>
+        <Card.Title style={{
+          color: '#F1FFFA',
+        }}
+        >
+          {itemObj.label}
+        </Card.Title>
+        <p style={{ color: '#96A6A0' }}>
           {status}
         </p>
         <Link href={`/items/edit/${itemObj.firebaseKey}`} passHref>
-          <Button variant="info">EDIT</Button>
+          <Button
+            style={{
+              color: '#F1FFFA',
+              margin: '8px',
+              backgroundColor: '#3E9F95',
+              border: 'none',
+            }}
+            variant="info"
+          >
+            EDIT
+          </Button>
         </Link>
-        <Button variant="danger" onClick={deleteThisItem} className="m-2">
+        <Button
+          style={{
+            color: '#F1FFFA',
+            margin: '8px',
+            backgroundColor: '#FE4A4A',
+            border: 'none',
+          }}
+          variant="danger"
+          onClick={deleteThisItem}
+          className="m-2"
+        >
           DELETE
         </Button>
       </Card.Body>
