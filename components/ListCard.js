@@ -41,7 +41,7 @@ function ListCard({ listObj, onUpdate }) {
           ))
         }
         <Link href="/items/new" key={listObj.firebaseKey} value={listObj.firebaseKey} passHref>
-          <Button className="add-btn" style={{ color: '#96A6A0' }}>
+          <Button className="add-btn">
             Add an Item
           </Button>
         </Link>
