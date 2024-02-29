@@ -1,6 +1,10 @@
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
-import { Button, FloatingLabel, Form } from 'react-bootstrap';
+import {
+  Button,
+  FloatingLabel,
+  Form,
+} from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import { useAuth } from '../utils/context/authContext';
 import { createList, updateList } from '../api/listData';
@@ -42,22 +46,56 @@ function ListForm({ obj }) {
   };
 
   return (
-    <Form onSubmit={handleSubmit}>
-      <h2 className="text-white mt-5">{obj.firebaseKey ? 'Update' : 'Create'} List</h2>
+    <div className="form-div">
+      <Form
+        className="form"
+        onSubmit={handleSubmit}
+      >
+        <h2
+          style={{
+            fontSize: 'large',
+            color: '#F1FFFA',
+            fontWeight: '400',
+          }}
+          className="text-white mt-5"
+        >
+          {obj.firebaseKey ? 'Update' : 'Create'} List
+        </h2>
+        <FloatingLabel
+          style={{ color: '#96A6A0', backgroundColor: '#132029' }}
+          controlId="floatingInput1"
+          label="List Label"
+          className="mb-3"
+        >
+          <Form.Control
+            style={{
+              color: '#96A6A0',
+              backgroundColor: '#132029',
+              border: 'none',
+              justifyItems: 'center',
+            }}
+            type="text"
+            placeholder="Enter a name for this list"
+            name="label"
+            value={formInput.label}
+            onChange={handleChange}
+            required
+          />
+        </FloatingLabel>
 
-      <FloatingLabel controlId="floatingInput1" label="List Label" className="mb-3">
-        <Form.Control
-          type="text"
-          placeholder="Enter a name for this list"
-          name="label"
-          value={formInput.label}
-          onChange={handleChange}
-          required
-        />
-      </FloatingLabel>
-
-      <Button type="submit">{obj.firebaseKey ? 'Update' : 'Create'} List</Button>
-    </Form>
+        <Button
+          style={{
+            color: '#F1FFFA',
+            margin: '8px',
+            backgroundColor: '#3E9F95',
+            border: 'none',
+          }}
+          type="submit"
+        >
+          {obj.firebaseKey ? 'Update' : 'Create'} List
+        </Button>
+      </Form>
+    </div>
   );
 }
 

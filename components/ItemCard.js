@@ -29,16 +29,29 @@ export default function ItemCard({ itemObj }) {
   }
 
   return (
-    <Card style={{ width: '18rem', margin: '10px' }}>
+    <Card className="card">
       <Card.Body>
-        <Card.Title>{itemObj.label}</Card.Title>
-        <p>
+        <Card.Title style={{ color: '#F1FFFA' }}>
+          {itemObj.label}
+        </Card.Title>
+        <p style={{ color: '#96A6A0' }}>
           {status}
         </p>
         <Link href={`/items/edit/${itemObj.firebaseKey}`} passHref>
-          <Button variant="info">EDIT</Button>
+          <Button
+            className="btns-gen"
+            style={{ backgroundColor: '#3E9F95' }}
+            variant="info"
+          >
+            EDIT
+          </Button>
         </Link>
-        <Button variant="danger" onClick={deleteThisItem} className="m-2">
+        <Button
+          className="btns-gen, m-2"
+          style={{ backgroundColor: '#FE4A4A' }}
+          variant="danger"
+          onClick={deleteThisItem}
+        >
           DELETE
         </Button>
       </Card.Body>

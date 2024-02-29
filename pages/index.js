@@ -30,24 +30,10 @@ function Home() {
         {lists.map((list) => (
           <ListCard key={list.firebaseKey} listObj={list} onUpdate={getAllTheLists} />
         ))}
-        <Card style={{
-          width: '18rem',
-          margin: '10px',
-          backgroundColor: '#34424A',
-          borderRadius: '10px',
-        }}
-        >
+        <Card className="card">
           <Card.Body style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <Link href="/lists/new" passHref>
-              <Button
-                style={{
-                  color: '#F1FFFA',
-                  margin: '8px',
-                  backgroundColor: '#34424A',
-                  border: 'solid',
-                  borderColor: '#F1FFFA',
-                }}
-              >
+              <Button className="add-btn" style={{ color: '#F1FFFA' }}>
                 Add A List
               </Button>
             </Link>

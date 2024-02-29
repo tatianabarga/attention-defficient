@@ -24,18 +24,9 @@ function ListCard({ listObj, onUpdate }) {
   };
 
   return (
-    <Card style={{
-      width: '18rem',
-      margin: '10px',
-      backgroundColor: '#34424A',
-      borderRadius: '10px',
-    }}
-    >
+    <Card className="card">
       <Card.Body>
-        <Card.Title style={{
-          color: '#F1FFFA',
-        }}
-        >
+        <Card.Title style={{ color: '#F1FFFA', fontWeight: '400', borderColor: '#F1FFFA' }}>
           {listObj.label}
         </Card.Title>
         {
@@ -50,27 +41,15 @@ function ListCard({ listObj, onUpdate }) {
           ))
         }
         <Link href="/items/new" key={listObj.firebaseKey} value={listObj.firebaseKey} passHref>
-          <Button
-            style={{
-              color: '#96A6A0',
-              margin: '8px',
-              backgroundColor: '#34424A',
-              border: 'solid',
-              borderColor: '#96A6A0',
-            }}
-          >
+          <Button className="add-btn" style={{ color: '#96A6A0' }}>
             Add an Item
           </Button>
         </Link>
         <br />
         <Link href={`/lists/edit/${listObj.firebaseKey}`} passHref>
           <Button
-            style={{
-              color: '#F1FFFA',
-              margin: '8px',
-              backgroundColor: '#3E9F95',
-              border: 'none',
-            }}
+            className="btns-gen"
+            style={{ backgroundColor: '#3E9F95' }}
             variant="info"
           >
             EDIT
@@ -78,24 +57,16 @@ function ListCard({ listObj, onUpdate }) {
         </Link>
         <Link href={`/lists/${listObj.firebaseKey}`} passHref>
           <Button
-            style={{
-              color: '#F1FFFA',
-              margin: '8px',
-              backgroundColor: '#3E9F95',
-              border: 'none',
-            }}
+            className="btns-gen"
+            style={{ backgroundColor: '#3E9F95' }}
             variant="info"
           >
             VIEW
           </Button>
         </Link>
         <Button
-          style={{
-            color: '#F1FFFA',
-            margin: '8px',
-            backgroundColor: '#FE4A4A',
-            border: 'none',
-          }}
+          className="btns-gen"
+          style={{ backgroundColor: '#FE4A4A' }}
           onClick={deleteThisList}
         >
           DELETE

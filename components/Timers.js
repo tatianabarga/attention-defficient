@@ -14,54 +14,37 @@ function Timer25({ expiryTimestamp }) {
   } = useTimer({ expiryTimestamp, onExpire: () => TimerEndedModal('Focus') });
 
   return (
-    <div style={{
-      textAlign: 'center',
-      margin: '10px',
-      border: 'none',
-      borderRadius: '10px',
-      backgroundColor: '#34424A',
-    }}
+    <div
+      className="timer-div"
     >
       <p style={{ color: '#FE4A4A', margin: '5px' }}>Focus (25min)</p>
-      <div style={{ fontSize: '30px', color: '#F1FFFA', margin: '10px' }}>
+      <div className="timer-digits">
         <span>{String(minutes).padStart(2, '0')}</span>:
         <span>{String(seconds).padStart(2, '0')}</span>
       </div>
       <Button
-        style={{
-          color: '#F1FFFA',
-          backgroundColor: '#FE4A4A',
-          border: 'none',
-          margin: '10px',
-        }}
+        className="btns-gen"
+        style={{ backgroundColor: '#FE4A4A' }}
         onClick={() => {
           const time = new Date();
           time.setSeconds(time.getSeconds() + 1500);
           restart(time);
         }}
-      >Start
+      >START
       </Button>
       <Button
-        style={{
-          color: '#F1FFFA',
-          backgroundColor: '#FE4A4A',
-          border: 'none',
-          margin: '10px',
-        }}
+        className="btns-gen"
+        style={{ backgroundColor: '#FE4A4A' }}
         onClick={pause}
       >
-        Pause
+        PAUSE
       </Button>
       <Button
-        style={{
-          color: '#F1FFFA',
-          backgroundColor: '#FE4A4A',
-          border: 'none',
-          margin: '10px',
-        }}
+        className="btns-gen"
+        style={{ backgroundColor: '#FE4A4A' }}
         onClick={resume}
       >
-        Resume
+        RESUME
       </Button>
     </div>
   );
@@ -77,54 +60,37 @@ function Timer5({ expiryTimestamp }) {
   } = useTimer({ expiryTimestamp, onExpire: () => console.warn('onExpire called') });
 
   return (
-    <div style={{
-      textAlign: 'center',
-      margin: '10px',
-      border: 'none',
-      borderRadius: '10px',
-      backgroundColor: '#34424A',
-    }}
+    <div
+      className="timer-div"
     >
       <p style={{ color: '#3E9F95', margin: '5px' }}>Short Break (5min)</p>
-      <div style={{ fontSize: '30px', color: '#F1FFFA', margin: '10px' }}>
+      <div className="timer-digits">
         <span>{String(minutes).padStart(2, '0')}</span>:
         <span>{String(seconds).padStart(2, '0')}</span>
       </div>
       <Button
-        style={{
-          color: '#F1FFFA',
-          backgroundColor: '#3E9F95',
-          border: 'none',
-          margin: '10px',
-        }}
+        className="btns-gen"
+        style={{ backgroundColor: '#3E9F95' }}
         onClick={() => {
           const time = new Date();
           time.setSeconds(time.getSeconds() + 300);
           restart(time);
         }}
-      >Start
+      >START
       </Button>
       <Button
-        style={{
-          color: '#F1FFFA',
-          backgroundColor: '#3E9F95',
-          border: 'none',
-          margin: '10px',
-        }}
+        className="btns-gen"
+        style={{ backgroundColor: '#3E9F95' }}
         onClick={pause}
       >
-        Pause
+        PAUSE
       </Button>
       <Button
-        style={{
-          color: '#F1FFFA',
-          backgroundColor: '#3E9F95',
-          border: 'none',
-          margin: '10px',
-        }}
+        className="btns-gen"
+        style={{ backgroundColor: '#3E9F95' }}
         onClick={resume}
       >
-        Resume
+        RESUME
       </Button>
     </div>
   );
@@ -140,54 +106,37 @@ function Timer30({ expiryTimestamp }) {
   } = useTimer({ expiryTimestamp, onExpire: () => console.warn('onExpire called') });
 
   return (
-    <div style={{
-      textAlign: 'center',
-      margin: '10px',
-      border: 'none',
-      borderRadius: '10px',
-      backgroundColor: '#34424A',
-    }}
+    <div
+      className="timer-div"
     >
       <p style={{ color: '#AF60FF', margin: '5px' }}>Long Break (30min)</p>
-      <div style={{ fontSize: '30px', color: '#F1FFFA', margin: '10px' }}>
+      <div className="timer-digits">
         <span>{String(minutes).padStart(2, '0')}</span>:
         <span>{String(seconds).padStart(2, '0')}</span>
       </div>
       <Button
-        style={{
-          color: '#F1FFFA',
-          backgroundColor: '#AF60FF',
-          border: 'none',
-          margin: '10px',
-        }}
+        className="btns-gen"
+        style={{ backgroundColor: '#AF60FF' }}
         onClick={() => {
           const time = new Date();
           time.setSeconds(time.getSeconds() + 1800);
           restart(time);
         }}
-      >Start
+      >START
       </Button>
       <Button
-        style={{
-          color: '#F1FFFA',
-          backgroundColor: '#AF60FF',
-          border: 'none',
-          margin: '10px',
-        }}
+        className="btns-gen"
+        style={{ backgroundColor: '#AF60FF' }}
         onClick={pause}
       >
-        Pause
+        PAUSE
       </Button>
       <Button
-        style={{
-          color: '#F1FFFA',
-          backgroundColor: '#AF60FF',
-          border: 'none',
-          margin: '10px',
-        }}
+        className="btns-gen"
+        style={{ backgroundColor: '#AF60FF' }}
         onClick={resume}
       >
-        Resume
+        RESUME
       </Button>
     </div>
   );

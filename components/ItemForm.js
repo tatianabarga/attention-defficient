@@ -73,14 +73,36 @@ function ItemForm({ obj }) {
   };
 
   return (
-    <Form onSubmit={handleSubmit}>
-      <h2 className="text-white mt-5">{obj.firebaseKey ? 'Update' : 'Create'} Item</h2>
+    <Form
+      className="form"
+      onSubmit={handleSubmit}
+    >
+      <h2
+        style={{
+          fontSize: 'large',
+          color: '#F1FFFA',
+          fontWeight: '400',
+        }}
+        className="text-white mt-5"
+      >
+        {obj.firebaseKey ? 'Update' : 'Create'} Item
+      </h2>
 
-      <FloatingLabel controlId="floatingTextarea" label="Item Label" className="mb-3">
+      <FloatingLabel
+        style={{ color: '#96A6A0', backgroundColor: '#132029' }}
+        controlId="floatingTextarea"
+        label="Item Label"
+        className="mb-3"
+      >
         <Form.Control
+          style={{
+            color: '#96A6A0',
+            backgroundColor: '#132029',
+            border: 'none',
+            justifyItems: 'center',
+          }}
           as="textarea"
           placeholder="Enter a Label"
-          style={{ height: '100px' }}
           name="label"
           value={formInput.label}
           onChange={handleChange}
@@ -90,6 +112,12 @@ function ItemForm({ obj }) {
 
       <FloatingLabel controlId="floatingSelect" label="List">
         <Form.Select
+          style={{
+            color: '#96A6A0',
+            backgroundColor: '#132029',
+            border: 'none',
+            justifyItems: 'center',
+          }}
           aria-label="List"
           name="listId"
           onChange={handleChange}
@@ -111,8 +139,18 @@ function ItemForm({ obj }) {
         </Form.Select>
       </FloatingLabel>
 
-      <ToggleButtonGroup type="checkbox" className="mb-2">
+      <ToggleButtonGroup
+        style={{ margin: '8px' }}
+        type="checkbox"
+        className="mb-2"
+      >
         <ToggleButton
+          style={{
+            color: '#F1FFFA',
+            margin: '8px',
+            backgroundColor: '#3E9F95',
+            border: 'none',
+          }}
           id="tbg-radio-1"
           value={1}
           onChange={handleChangeCheck}
@@ -120,6 +158,12 @@ function ItemForm({ obj }) {
           Not Started
         </ToggleButton>
         <ToggleButton
+          style={{
+            color: '#F1FFFA',
+            margin: '8px',
+            backgroundColor: '#3E9F95',
+            border: 'none',
+          }}
           id="tbg-radio-2"
           value={2}
           onChange={handleChangeCheck}
@@ -127,6 +171,12 @@ function ItemForm({ obj }) {
           In Progress
         </ToggleButton>
         <ToggleButton
+          style={{
+            color: '#F1FFFA',
+            margin: '8px',
+            backgroundColor: '#3E9F95',
+            border: 'none',
+          }}
           id="tbg-radio-3"
           value={3}
           onChange={handleChangeCheck}
@@ -135,7 +185,17 @@ function ItemForm({ obj }) {
         </ToggleButton>
       </ToggleButtonGroup>
 
-      <Button type="submit">{obj.firebaseKey ? 'Update' : 'Create'} Item</Button>
+      <Button
+        style={{
+          color: '#F1FFFA',
+          margin: '8px',
+          backgroundColor: '#3E9F95',
+          border: 'none',
+        }}
+        type="submit"
+      >
+        {obj.firebaseKey ? 'Update' : 'Create'} Item
+      </Button>
     </Form>
   );
 }
