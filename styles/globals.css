@@ -18,10 +18,6 @@ a {
   box-sizing: border-box;
 }
 
-/* body {
-  background-color: #132029;
-} */
-
 .timer-div {
   text-align: center;
   margin: 10px;
@@ -41,6 +37,15 @@ a {
   color: #F1FFFA;
   border: none;
   margin: 10px;
+  transition: 0.5s;
+}
+
+.btns-gen:hover {
+  color: #F1FFFA;
+  border: none;
+  margin: 10px;
+  text-shadow: 0px 0px 10px #F1FFFA;
+  box-shadow: 0 0 28px #CFE4DC;
 }
 
 .card {
@@ -51,18 +56,22 @@ a {
 }
 
 .add-btn {
+  color: #96A6A0;
   margin: 8px;
   background-color: #34424A;
   border: solid;
   border-color: #96A6A0;
+  transition: 0.5s;
 }
 
 .add-btn:hover {
+  color: #F1FFFA;
   box-shadow: 0 0 28px #CFE4DC;
   margin: 8px;
   background-color: #34424A;
   border: solid;
   border-color: #F1FFFA;
+  text-shadow: 0px 0px 10px #96A6A0;
 }
 
 .form {
@@ -79,23 +88,24 @@ a {
 }
 
 .nav-bar {
-  color: #F1FFFA;
+  color: #CFE4DC;
   font-size: 50px;
   letter-spacing: 9px;
   font-weight: 600;
   padding: 10px;
   padding-right: 400px;
-  text-shadow: 0px 0px 5px #F1FFFA;
+  transition: 0.5s;
+  /* text-shadow: 0px 0px 10px #96A6A0; */
 }
 
 .nav-bar:hover {
   color: #F1FFFA;
-  transition: 0.5s;
   font-size: 50px;
   letter-spacing: 15px;
   font-weight: 600;
   padding: 10px;
   padding-right: 400px;
+  text-shadow: 0px 0px 15px #F1FFFA;
 }
 
 .space {
