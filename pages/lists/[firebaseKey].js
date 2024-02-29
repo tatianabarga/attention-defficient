@@ -53,6 +53,7 @@ export default function ViewList() {
                   backgroundColor: '#34424A',
                   border: 'solid',
                   borderColor: '#F1FFFA',
+                  boxShadow: '0 0 35px #96A6A0',
                 }}
               >
                 Add an Item

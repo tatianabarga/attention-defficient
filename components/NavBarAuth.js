@@ -11,24 +11,17 @@ import { signOut } from '../utils/auth';
 
 export default function NavBarAuth() {
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-      <Container>
+    <Navbar style={{ backgroundColor: '#34424A', marginBottom: '40px' }} collapseOnSelect expand="lg">
+      <Container className="space">
         <Link passHref href="/">
-          <Navbar.Brand>Lets get it</Navbar.Brand>
+          <Navbar.Brand className="nav-bar">
+            LETS GIT IT
+          </Navbar.Brand>
         </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Link passHref href="/">
-              <Nav.Link>Home</Nav.Link>
-            </Link>
-            <Link passHref href="/todoPage">
-              <Nav.Link>To Do Lists</Nav.Link>
-            </Link>
-            <Link passHref href="/timerPage">
-              <Nav.Link>Timers</Nav.Link>
-            </Link>
-            <Button variant="danger" onClick={signOut}>
+            <Button className="btns-gen" style={{ backgroundColor: '#AF60FF' }} onClick={signOut}>
               Sign Out
             </Button>
           </Nav>

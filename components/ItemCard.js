@@ -29,18 +29,9 @@ export default function ItemCard({ itemObj }) {
   }
 
   return (
-    <Card style={{
-      width: '18rem',
-      margin: '10px',
-      backgroundColor: '#34424A',
-      borderRadius: '10px',
-    }}
-    >
+    <Card className="card">
       <Card.Body>
-        <Card.Title style={{
-          color: '#F1FFFA',
-        }}
-        >
+        <Card.Title style={{ color: '#F1FFFA' }}>
           {itemObj.label}
         </Card.Title>
         <p style={{ color: '#96A6A0' }}>
@@ -48,27 +39,18 @@ export default function ItemCard({ itemObj }) {
         </p>
         <Link href={`/items/edit/${itemObj.firebaseKey}`} passHref>
           <Button
-            style={{
-              color: '#F1FFFA',
-              margin: '8px',
-              backgroundColor: '#3E9F95',
-              border: 'none',
-            }}
+            className="btns-gen"
+            style={{ backgroundColor: '#3E9F95' }}
             variant="info"
           >
             EDIT
           </Button>
         </Link>
         <Button
-          style={{
-            color: '#F1FFFA',
-            margin: '8px',
-            backgroundColor: '#FE4A4A',
-            border: 'none',
-          }}
+          className="btns-gen, m-2"
+          style={{ backgroundColor: '#FE4A4A' }}
           variant="danger"
           onClick={deleteThisItem}
-          className="m-2"
         >
           DELETE
         </Button>
