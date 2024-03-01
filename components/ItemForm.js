@@ -110,34 +110,32 @@ function ItemForm({ obj }) {
         />
       </FloatingLabel>
 
-      <FloatingLabel controlId="floatingSelect" label="List">
-        <Form.Select
-          style={{
-            color: '#96A6A0',
-            backgroundColor: '#132029',
-            border: 'none',
-            justifyItems: 'center',
-          }}
-          aria-label="List"
-          name="listId"
-          onChange={handleChange}
-          className="mb-3"
-          value={formInput.listId}
-          required
-        >
-          <option value="">Select a List</option>
-          {
-            lists.map((list) => (
-              <option
-                key={list.firebaseKey}
-                value={list.firebaseKey}
-              >
-                {list.label}
-              </option>
-            ))
-          }
-        </Form.Select>
-      </FloatingLabel>
+      <Form.Select
+        style={{
+          color: '#96A6A0',
+          backgroundColor: '#132029',
+          border: 'none',
+          justifyItems: 'center',
+        }}
+        aria-label="List"
+        name="listId"
+        onChange={handleChange}
+        className="mb-3"
+        value={formInput.listId}
+        required
+      >
+        <option value="">Select a List</option>
+        {
+          lists.map((list) => (
+            <option
+              key={list.firebaseKey}
+              value={list.firebaseKey}
+            >
+              {list.label}
+            </option>
+          ))
+        }
+      </Form.Select>
 
       <ToggleButtonGroup
         style={{ margin: '8px' }}
