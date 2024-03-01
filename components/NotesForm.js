@@ -30,18 +30,23 @@ export default function NotesForm({ obj }) {
   };
 
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form style={{ display: 'flex', flexDirection: 'column' }} onSubmit={handleSubmit}>
       <Form.Group>
         <Form.Control
+          style={{
+            color: '#96A6A0',
+            backgroundColor: '#132029',
+            border: 'none',
+            justifyItems: 'center',
+          }}
           type="text"
-          placeholder="type that stray thought here"
           name="label"
           value={formInput.label}
           onChange={handleChange}
           required
         />
       </Form.Group>
-      <Button type="submit">Add Thought</Button>
+      <Button className="btns-gen" style={{ backgroundColor: '#AF60FF' }} type="submit">Add Thought</Button>
     </Form>
   );
 }

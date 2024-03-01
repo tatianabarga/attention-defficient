@@ -21,28 +21,27 @@ export default function Notepad() {
   console.log(notes);
 
   return (
-    <div>
-      <Card className="card">
-        <h2 style={{ color: '#F1FFFA', fontWeight: '400', fontSize: 'x-large' }}>Stray Thoughts</h2>
-        <ListGroup>
-          {/* map over notes here */}
-          {
-            notes.map((note) => (
-              <li
-                style={{ color: '#96A6A0', backgroundColor: '#34424A' }}
-                key={note.firebaseKey}
-                value={note.firebaseKey}
-              >
-                {note.label}
-              </li>
-            ))
-          }
-        </ListGroup>
-        {formState && <NotesForm />}
-        <Button className="add-btn" onClick={showBlank}>
-          Add Thought
-        </Button>
-      </Card>
-    </div>
+    <Card className="form" style={{ borderWidth: '10px', borderColor: '#34424A' }}>
+      <h2 style={{ color: '#F1FFFA', fontWeight: '400', fontSize: 'x-large' }}>Stray Thoughts</h2>
+      <ListGroup>
+        {/* map over notes here */}
+        {
+          notes.map((note) => (
+            <div
+              className="note-item"
+              key={note.firebaseKey}
+              value={note.firebaseKey}
+            >
+              {note.label}
+              <Button className="tiny-btn">X</Button>
+            </div>
+          ))
+        }
+      </ListGroup>
+      {formState && <NotesForm />}
+      <Button className="add-btn" onClick={showBlank}>
+        Add a Thought
+      </Button>
+    </Card>
   );
 }
