@@ -39,7 +39,7 @@ Contributors:
 
 Links and resources:
 Project Board: https://github.com/users/tatianabarga/projects/4/views/1
-Deplolyed Project: 
+Deplolyed Project: https://attention-defficient.netlify.app/
 ERD: https://drawsql.app/teams/tatiana-bargas-team/diagrams/capstone
 Wireframe: https://www.figma.com/file/6PlL8qdAZ5fsyStEtBT873/attention-defficient?type=design&node-id=2-3&mode=design&t=CBqLkDDjOK1Bj9Ha-0
 Loom walkthrough:

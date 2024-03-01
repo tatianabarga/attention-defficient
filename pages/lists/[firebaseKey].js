@@ -47,14 +47,8 @@ export default function ViewList() {
           <Card.Body style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <Link href="/items/new" key={listDetails.firebaseKey} value={listDetails.firebaseKey} passHref>
               <Button
-                style={{
-                  color: '#F1FFFA',
-                  margin: '8px',
-                  backgroundColor: '#34424A',
-                  border: 'solid',
-                  borderColor: '#F1FFFA',
-                  boxShadow: '0 0 35px #96A6A0',
-                }}
+                className="add-btn"
+                style={{ color: '#F1FFFA' }}
               >
                 Add an Item
               </Button>
