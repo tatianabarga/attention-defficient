@@ -4,6 +4,7 @@ import { useAuth } from './context/authContext';
 import Loading from '../components/Loading';
 import Signin from '../components/Signin';
 import NavBarAuth from '../components/NavBarAuth';
+import Notepad from '../components/Notepad';
 
 const ViewDirectorBasedOnUserAuthStatus = ({ component: Component, pageProps }) => {
   const { user, userLoading } = useAuth();
@@ -17,6 +18,7 @@ const ViewDirectorBasedOnUserAuthStatus = ({ component: Component, pageProps }) 
       <>
         <NavBarAuth />
         <Timers />
+        <Notepad />
         <div className="container">
           <Component {...pageProps} />
         </div>
