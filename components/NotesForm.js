@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import PropTypes from 'prop-types';
+import { useRouter } from 'next/router';
 import { createNote, updateNote } from '../api/noteData';
 import { useAuth } from '../utils/context/authContext';
 
@@ -10,7 +11,12 @@ const initialState = {
 
 export default function NotesForm({ obj }) {
   const [formInput, setFormInput] = useState({ ...initialState, ...obj });
+  const router = useRouter();
   const { user } = useAuth();
+
+  useEffect(() => {
+    setFormInput({ ...initialState, ...obj });
+  }, [obj]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -20,13 +26,19 @@ export default function NotesForm({ obj }) {
     }));
   };
 
-  const handleSubmit = () => {
-    console.log(formInput);
-    const payload = { ...formInput, uid: user.uid };
-    createNote(payload).then(({ name }) => {
-      const patchPayload = { firebaseKey: name };
-      updateNote(patchPayload);
-    });
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (obj.firebaseKey) {
+      updateNote(formInput).then(() => router.push('/'));
+    } else {
+      const payload = { ...formInput, uid: user.uid };
+      createNote(payload).then(({ name }) => {
+        const patchPayload = { firebaseKey: name };
+        updateNote(patchPayload).then(() => {
+          router.push('/');
+        });
+      });
+    }
   };
 
   return (

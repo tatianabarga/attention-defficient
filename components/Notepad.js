@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Card, ListGroup } from 'react-bootstrap';
-import { getNotes } from '../api/noteData';
+import { useRouter } from 'next/router';
+import { deleteNote, getNotes } from '../api/noteData';
 import NotesForm from './NotesForm';
 import { useAuth } from '../utils/context/authContext';
 
@@ -8,6 +9,7 @@ export default function Notepad() {
   const [notes, setNotes] = useState([]);
   const [formState, setFormState] = useState(false);
   const { user } = useAuth();
+  const router = useRouter();
 
   useEffect(() => {
     getNotes(user.uid).then(setNotes);
@@ -18,7 +20,18 @@ export default function Notepad() {
     setFormState(true);
   };
 
-  console.log(notes);
+  const onUpdate = () => {
+    router.push('/');
+  };
+
+  const clearNotepad = () => {
+    if (window.confirm('Delete all stray thoughts?')) {
+      const promiseArray = notes.map((note) => deleteNote(note.firebaseKey));
+      console.log(promiseArray);
+      Promise.all(promiseArray)
+        .then(() => onUpdate());
+    }
+  };
 
   return (
     <Card className="form" style={{ borderWidth: '10px', borderColor: '#34424A' }}>
@@ -33,7 +46,7 @@ export default function Notepad() {
               value={note.firebaseKey}
             >
               {note.label}
-              <Button className="tiny-btn">X</Button>
+              {/* <Button className="tiny-btn">X</Button> */}
             </div>
           ))
         }
@@ -41,6 +54,13 @@ export default function Notepad() {
       {formState && <NotesForm />}
       <Button className="add-btn" onClick={showBlank}>
         Add a Thought
+      </Button>
+      <Button
+        className="btns-gen"
+        style={{ backgroundColor: '#AF60FF' }}
+        onClick={clearNotepad}
+      >
+        Clear Notepad
       </Button>
     </Card>
   );
