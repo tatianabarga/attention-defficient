@@ -10,24 +10,30 @@ export default function Notepad() {
   const [formState, setFormState] = useState(false);
   const { user } = useAuth();
   const router = useRouter();
-
-  useEffect(() => {
-    getNotes(user.uid).then(setNotes);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const [buttonText, setButtonText] = useState([]);
 
   const showBlank = () => {
-    setFormState(true);
+    setFormState(!formState);
   };
 
   const onUpdate = () => {
+    showBlank();
     router.push('/');
   };
+
+  useEffect(() => {
+    getNotes(user.uid).then(setNotes);
+    if (!formState) {
+      setButtonText('Add a Thought');
+    } else if (formState) {
+      setButtonText('close blank');
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [onUpdate]);
 
   const clearNotepad = () => {
     if (window.confirm('Delete all stray thoughts?')) {
       const promiseArray = notes.map((note) => deleteNote(note.firebaseKey));
-      console.log(promiseArray);
       Promise.all(promiseArray)
         .then(() => onUpdate());
     }
@@ -37,7 +43,6 @@ export default function Notepad() {
     <Card className="form" style={{ borderWidth: '10px', borderColor: '#34424A' }}>
       <h2 style={{ color: '#F1FFFA', fontWeight: '400', fontSize: 'x-large' }}>Stray Thoughts</h2>
       <ListGroup>
-        {/* map over notes here */}
         {
           notes.map((note) => (
             <div
@@ -46,14 +51,13 @@ export default function Notepad() {
               value={note.firebaseKey}
             >
               {note.label}
-              {/* <Button className="tiny-btn">X</Button> */}
             </div>
           ))
         }
       </ListGroup>
       {formState && <NotesForm />}
       <Button className="add-btn" onClick={showBlank}>
-        Add a Thought
+        {buttonText}
       </Button>
       <Button
         className="btns-gen"

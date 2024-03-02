@@ -9,14 +9,14 @@ const initialState = {
   label: '',
 };
 
-export default function NotesForm({ obj }) {
+export default function NotesForm({ obj, onUpdate }) {
   const [formInput, setFormInput] = useState({ ...initialState, ...obj });
   const router = useRouter();
   const { user } = useAuth();
 
   useEffect(() => {
     setFormInput({ ...initialState, ...obj });
-  }, [obj]);
+  }, [obj, onUpdate]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -69,6 +69,7 @@ NotesForm.propTypes = {
     firebaseKey: PropTypes.string,
     uid: PropTypes.string,
   }),
+  onUpdate: PropTypes.func.isRequired,
 };
 
 NotesForm.defaultProps = {
