@@ -56,7 +56,7 @@ function ItemForm({ obj }) {
   };
 
   const handleChangeCheck = (e) => {
-    const { value, checked } = e.target;
+    const { value } = e.target;
     if (value === '1') {
       formInput.notStarted = true;
       formInput.inProgress = false;
@@ -138,17 +138,14 @@ function ItemForm({ obj }) {
       </Form.Select>
 
       <ToggleButtonGroup
+        defaultValue={1}
         style={{ margin: '8px' }}
-        type="checkbox"
+        type="radio"
+        name="options"
         className="mb-2"
       >
         <ToggleButton
-          style={{
-            color: '#F1FFFA',
-            margin: '8px',
-            backgroundColor: '#3E9F95',
-            border: 'none',
-          }}
+          className="toggle-btn"
           id="tbg-radio-1"
           value={1}
           onChange={handleChangeCheck}
@@ -156,12 +153,7 @@ function ItemForm({ obj }) {
           Not Started
         </ToggleButton>
         <ToggleButton
-          style={{
-            color: '#F1FFFA',
-            margin: '8px',
-            backgroundColor: '#3E9F95',
-            border: 'none',
-          }}
+          className="toggle-btn"
           id="tbg-radio-2"
           value={2}
           onChange={handleChangeCheck}
@@ -169,12 +161,7 @@ function ItemForm({ obj }) {
           In Progress
         </ToggleButton>
         <ToggleButton
-          style={{
-            color: '#F1FFFA',
-            margin: '8px',
-            backgroundColor: '#3E9F95',
-            border: 'none',
-          }}
+          className="toggle-btn"
           id="tbg-radio-3"
           value={3}
           onChange={handleChangeCheck}
@@ -184,12 +171,7 @@ function ItemForm({ obj }) {
       </ToggleButtonGroup>
 
       <Button
-        style={{
-          color: '#F1FFFA',
-          margin: '8px',
-          backgroundColor: '#3E9F95',
-          border: 'none',
-        }}
+        className="toggle-btn"
         type="submit"
       >
         {obj.firebaseKey ? 'Update' : 'Create'} Item
