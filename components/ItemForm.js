@@ -20,7 +20,6 @@ function ItemForm({ obj }) {
   const [formInput, setFormInput] = useState({ ...initialState, ...obj });
   const router = useRouter();
   const { user } = useAuth();
-  const [selectedStatus, setSelectedStatus] = useState([]);
   const [lists, setLists] = useState([]);
 
   useEffect(() => {
