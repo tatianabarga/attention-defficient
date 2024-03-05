@@ -32,7 +32,7 @@ function ListCard({ listObj, onUpdate }) {
         {
           items.map((item) => (
             <p
-              style={{ color: '#96A6A0' }}
+              style={{ color: '#96A6A0', textDecoration: item.done ? 'line-through' : 'none' }}
               key={item.firebaseKey}
               value={item.firebaseKey}
             >

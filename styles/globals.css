@@ -133,3 +133,18 @@ body {
   position: relative;
 }
 
+.toggle-btn {
+  color: #F1FFFA;
+  margin: 8px;
+  background-color: #3E9F95;
+  border: none;
+}
+
+.toggle-btn:hover {
+  color: #F1FFFA;
+  margin: 8px;
+  background-color: #3E9F95;
+  border: none;
+  text-shadow: 0px 0px 10px #96A6A0;
+  box-shadow: 0 0 28px #3E9F95;
+}
