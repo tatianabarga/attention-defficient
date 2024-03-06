@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { Timers } from '../components/Timers';
+import Timers from '../components/Timers';
 import { useAuth } from './context/authContext';
 import Loading from '../components/Loading';
 import Signin from '../components/Signin';
