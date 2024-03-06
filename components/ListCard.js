@@ -3,16 +3,25 @@ import PropTypes from 'prop-types';
 import Card from 'react-bootstrap/Card';
 import Link from 'next/link';
 import { Button } from 'react-bootstrap';
-import { deleteItem, getItemsByList } from '../api/itemData';
+import { useRouter } from 'next/router';
+import {
+  createItem,
+  deleteItem,
+  getItemsByList,
+  updateItem,
+} from '../api/itemData';
 import { deleteList } from '../api/listData';
+import { useAuth } from '../utils/context/authContext';
 
 function ListCard({ listObj, onUpdate }) {
   const [items, setItems] = useState([]);
+  const user = useAuth();
+  const router = useRouter();
 
   useEffect(() => {
     getItemsByList(listObj.firebaseKey).then(setItems);
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [onUpdate]);
 
   const deleteThisList = () => {
     if (window.confirm(`Delete ${listObj.label}?`)) {
@@ -21,6 +30,24 @@ function ListCard({ listObj, onUpdate }) {
         .then(deleteList(listObj.firebaseKey))
         .then(() => onUpdate());
     }
+  };
+
+  const addItem = (listKey) => {
+    const payload = {
+      done: false,
+      inProgress: false,
+      label: 'new item',
+      listId: listKey,
+      notStarted: true,
+      uid: user.id,
+    };
+    // send payload through copied handle submit function from form
+    createItem(payload).then(({ name }) => {
+      const patchPayload = { firebaseKey: name };
+      updateItem(patchPayload).then(() => {
+        onUpdate();
+      });
+    });
   };
 
   return (
@@ -40,11 +67,9 @@ function ListCard({ listObj, onUpdate }) {
             </p>
           ))
         }
-        <Link href="/items/new" key={listObj.firebaseKey} value={listObj.firebaseKey} passHref>
-          <Button className="add-btn">
-            Add an Item
-          </Button>
-        </Link>
+        <Button className="add-btn" onClick={() => (addItem(listObj.firebaseKey))}>
+          Add an Item
+        </Button>
         <br />
         <Link href={`/lists/edit/${listObj.firebaseKey}`} passHref>
           <Button

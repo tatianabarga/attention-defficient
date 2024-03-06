@@ -64,10 +64,28 @@ const deleteItem = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+const getItemsByLabel = (newLabel) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/items.json?orderBy="label"&equalTo="${newLabel}"`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then((data) => resolve(Object.values(data)))
+    .catch(reject);
+});
+
 export {
   createItem,
   updateItem,
   getSingleItem,
   getItemsByList,
   deleteItem,
+  getItemsByLabel,
 };
