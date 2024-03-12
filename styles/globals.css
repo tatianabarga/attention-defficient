@@ -52,7 +52,7 @@ body {
 }
 
 .card {
-  width: 18rem;
+  width: 25rem;
   margin: 10px;
   background-color: #34424A;
   border-radius: 10px;
@@ -147,4 +147,9 @@ body {
   border: none;
   text-shadow: 0px 0px 10px #96A6A0;
   box-shadow: 0 0 28px #3E9F95;
+}
+
+.item:hover {
+  color: #F1FFFA;
+  text-shadow: 0px 0px 10px #96A6A0;
 }
