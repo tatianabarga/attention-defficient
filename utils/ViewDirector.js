@@ -18,9 +18,13 @@ const ViewDirectorBasedOnUserAuthStatus = ({ component: Component, pageProps }) 
       <>
         <NavBarAuth />
         <Timers />
-        <Notepad />
-        <div className="container">
-          <Component {...pageProps} />
+        <div className="main-container">
+          <div className="side-panel">
+            <Notepad />
+          </div>
+          <div className="content-container">
+            <Component {...pageProps} />
+          </div>
         </div>
       </>
     );
