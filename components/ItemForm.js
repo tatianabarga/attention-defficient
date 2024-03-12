@@ -42,7 +42,7 @@ function ItemForm({ obj }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (obj.firebaseKey) {
-      updateItem(formInput).then(() => router.push(`/items/${obj.firebaseKey}`));
+      updateItem(formInput).then(() => router.push('/'));
     } else {
       const payload = { ...formInput, uid: user.uid };
       createItem(payload).then(({ name }) => {
