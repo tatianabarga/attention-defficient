@@ -156,13 +156,13 @@ body {
 
 .main-container {
   display: flex;
+  flex-grow: 2;
 }
 
 .side-panel {
-  flex: 0 0 auto; /* Prevent side panel from growing */
-  width: 200px; /* Adjust width as needed */
+  flex-grow: 1;
 }
 
 .content-container {
-  flex: 1; /* Let the content container grow to fill the available space */
+  flex-grow: 3;
 }
