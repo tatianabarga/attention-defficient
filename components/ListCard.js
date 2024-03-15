@@ -17,7 +17,7 @@ function ListCard({ listObj, onUpdate }) {
   const [items, setItems] = useState([]);
   const [editingItemKey, setEditingItemKey] = useState(null);
   const [editItemLabel, setEditItemLabel] = useState('');
-  const user = useAuth();
+  const { user } = useAuth();
   const router = useRouter();
 
   useEffect(() => {
@@ -40,7 +40,7 @@ function ListCard({ listObj, onUpdate }) {
       label: 'new item',
       listId: listKey,
       notStarted: true,
-      uid: user.id,
+      uid: user.uid,
     };
     createItem(payload).then(({ name }) => {
       const patchPayload = { firebaseKey: name };
