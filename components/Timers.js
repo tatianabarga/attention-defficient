@@ -2,6 +2,8 @@ import React from 'react';
 import { useTimer } from 'react-timer-hook';
 import { Button } from 'react-bootstrap';
 import PropTypes from 'prop-types';
+import useSound from 'use-sound';
+import woodSfx from '../utils/sounds/wood.mp3';
 import TimerEndedModal from './TimerEndedModal';
 
 function TimerGen({
@@ -17,6 +19,8 @@ function TimerGen({
     resume,
     restart,
   } = useTimer({ expiryTimestamp, onExpire: () => TimerEndedModal('Focus') });
+
+  const soundWood = useSound(woodSfx);
 
   return (
     <div
@@ -34,6 +38,7 @@ function TimerGen({
           const time = new Date();
           time.setSeconds(time.getSeconds() + plusSeconds);
           restart(time);
+          soundWood();
         }}
       >START
       </Button>
