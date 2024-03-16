@@ -26,7 +26,7 @@ function ListCard({ listObj, onUpdate }) {
 
   useEffect(() => {
     getItemsByList(listObj.firebaseKey).then(setItems);
-  }, [onUpdate]);
+  }, [onUpdate, listObj.firebaseKey]);
 
   const deleteThisList = () => {
     if (window.confirm(`Delete ${listObj.label}?`)) {
