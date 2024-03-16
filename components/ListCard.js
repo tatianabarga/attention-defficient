@@ -148,7 +148,7 @@ function ListCard({ listObj, onUpdate }) {
             className="btns-gen"
             style={{ backgroundColor: '#6dd6d3' }}
             variant="info"
-            onClick={() => soundWood()}
+            onClick={soundWood}
           >
             EDIT
           </Button>
@@ -158,7 +158,7 @@ function ListCard({ listObj, onUpdate }) {
             className="btns-gen"
             style={{ backgroundColor: '#6dd6d3' }}
             variant="info"
-            onClick={() => soundWood()}
+            onClick={soundWood}
           >
             VIEW
           </Button>
