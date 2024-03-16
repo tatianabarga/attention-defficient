@@ -47,8 +47,8 @@ body {
   color: #F1FFFA;
   border: none;
   margin: 10px;
-  text-shadow: 0px 0px 10px #F1FFFA;
-  box-shadow: 0 0 28px #CFE4DC;
+  text-shadow: 0px 0px 10px #6dd6d3;
+  box-shadow: 0 0 28px #6dd6d3;
 }
 
 .card {
@@ -68,13 +68,13 @@ body {
 }
 
 .add-btn:hover {
-  color: #F1FFFA;
-  box-shadow: 0 0 28px #CFE4DC;
+  color: #fff79b;
+  box-shadow: 0 0 28px #fffabe;
   margin: 8px;
   background-color: #34424A;
   border: solid;
-  border-color: #F1FFFA;
-  text-shadow: 0px 0px 10px #96A6A0;
+  border-color: #fff79b;
+  text-shadow: 0px 0px 10px #fffabe;
 }
 
 .form {
@@ -99,16 +99,6 @@ body {
   padding-right: 400px;
   transition: 0.5s;
   /* text-shadow: 0px 0px 10px #96A6A0; */
-}
-
-.nav-bar:hover {
-  color: #F1FFFA;
-  font-size: 50px;
-  letter-spacing: 15px;
-  font-weight: 600;
-  padding: 10px;
-  padding-right: 400px;
-  text-shadow: 0px 0px 15px #F1FFFA;
 }
 
 .space {
@@ -137,9 +127,13 @@ body {
   box-shadow: 0 0 28px #6dd6d3;
 }
 
+.item {
+  color:#96A6A0
+}
+
 .item:hover {
-  color: #F1FFFA;
-  text-shadow: 0px 0px 10px #96A6A0;
+  color: #fff79b;
+  text-shadow: 0px 0px 10px #fffabe;
 }
 
 .main-container {
@@ -161,4 +155,14 @@ body {
 
 .efficient {
   color: #6dd6d3;
+}
+
+.nav-bar:hover {
+  color: #F1FFFA;
+  font-size: 50px;
+  letter-spacing: 15px;
+  font-weight: 600;
+  padding: 10px;
+  padding-right: 400px;
+  text-shadow: 0px 0px 15px #6dd6d3;
 }

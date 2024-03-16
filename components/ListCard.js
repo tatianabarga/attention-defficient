@@ -83,10 +83,10 @@ function ListCard({ listObj, onUpdate }) {
               <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
                 <input
                   style={{
-                    color: '#96A6A0',
+                    color: '#fff1fa',
                     backgroundColor: '#34424A',
                     border: 'solid',
-                    borderColor: '#96A6A0',
+                    borderColor: '#fff1fa',
                     borderRadius: '10px',
                   }}
                   type="text"
@@ -112,7 +112,7 @@ function ListCard({ listObj, onUpdate }) {
               // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions
               <p
                 className="item"
-                style={{ color: '#96A6A0', textDecoration: item.done ? 'line-through' : 'none' }}
+                style={{ textDecoration: item.done ? 'line-through' : 'none' }}
                 onClick={() => handleEdit(item.firebaseKey, item.label)}
               >
                 {item.label}
