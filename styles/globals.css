@@ -115,18 +115,6 @@ body {
   justify-content: space-between;
 }
 
-.tiny-btn {
-  display: table-cell;
-  margin: 10px;
-  transition: 0.5s;
-  color: #F1FFFA;
-  border: none;
-  background-color: #FE4A4A;
-  width: 50px;
-  height: 20px;
-  font-size: 10px;
-}
-
 .note-item {
   color: #96A6A0;
   background-color: #34424A;
@@ -136,17 +124,17 @@ body {
 .toggle-btn {
   color: #F1FFFA;
   margin: 8px;
-  background-color: #3E9F95;
+  background-color: #6dd6d3;
   border: none;
 }
 
 .toggle-btn:hover {
   color: #F1FFFA;
   margin: 8px;
-  background-color: #3E9F95;
+  background-color: #6dd6d3;
   border: none;
   text-shadow: 0px 0px 10px #96A6A0;
-  box-shadow: 0 0 28px #3E9F95;
+  box-shadow: 0 0 28px #6dd6d3;
 }
 
 .item:hover {
@@ -165,4 +153,12 @@ body {
 
 .content-container {
   flex-grow: 3;
+}
+
+.attentiond {
+  color: #F1FFFA;
+}
+
+.efficient {
+  color: #6dd6d3;
 }

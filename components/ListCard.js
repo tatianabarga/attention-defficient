@@ -95,14 +95,14 @@ function ListCard({ listObj, onUpdate }) {
                 />
                 <Button
                   className="btns-gen"
-                  style={{ backgroundColor: '#AF60FF' }}
+                  style={{ backgroundColor: '#6dd6d3' }}
                   onClick={() => handleEditSubmit(item.firebaseKey)}
                 >
                   SAVE
                 </Button>
                 <Button
                   className="btns-gen"
-                  style={{ backgroundColor: '#3E9F95' }}
+                  style={{ backgroundColor: '#6dd6d3' }}
                   onClick={() => (editItem())}
                 >
                   EDIT
@@ -125,16 +125,16 @@ function ListCard({ listObj, onUpdate }) {
         </Button>
         <br />
         <Link href={`/lists/edit/${listObj.firebaseKey}`} passHref>
-          <Button className="btns-gen" style={{ backgroundColor: '#3E9F95' }} variant="info">
+          <Button className="btns-gen" style={{ backgroundColor: '#6dd6d3' }} variant="info">
             EDIT
           </Button>
         </Link>
         <Link href={`/lists/${listObj.firebaseKey}`} passHref>
-          <Button className="btns-gen" style={{ backgroundColor: '#3E9F95' }} variant="info">
+          <Button className="btns-gen" style={{ backgroundColor: '#6dd6d3' }} variant="info">
             VIEW
           </Button>
         </Link>
-        <Button className="btns-gen" style={{ backgroundColor: '#FE4A4A' }} onClick={deleteThisList}>
+        <Button className="btns-gen" style={{ backgroundColor: '#ff7783' }} onClick={deleteThisList}>
           DELETE
         </Button>
       </Card.Body>
