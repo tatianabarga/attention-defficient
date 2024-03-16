@@ -4,6 +4,8 @@ import Card from 'react-bootstrap/Card';
 import Link from 'next/link';
 import { Button } from 'react-bootstrap';
 import { useRouter } from 'next/router';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import useSound from 'use-sound';
 import {
   createItem,
   deleteItem,
@@ -12,8 +14,10 @@ import {
 } from '../api/itemData';
 import { deleteList } from '../api/listData';
 import { useAuth } from '../utils/context/authContext';
+import woodSfx from '../utils/sounds/wood.mp3';
 
 function ListCard({ listObj, onUpdate }) {
+  const [soundWood] = useSound(woodSfx);
   const [items, setItems] = useState([]);
   const [editingItemKey, setEditingItemKey] = useState(null);
   const [editItemLabel, setEditItemLabel] = useState('');
@@ -22,7 +26,7 @@ function ListCard({ listObj, onUpdate }) {
 
   useEffect(() => {
     getItemsByList(listObj.firebaseKey).then(setItems);
-  }, [onUpdate]);
+  }, [onUpdate, listObj.firebaseKey]);
 
   const deleteThisList = () => {
     if (window.confirm(`Delete ${listObj.label}?`)) {
@@ -96,14 +100,20 @@ function ListCard({ listObj, onUpdate }) {
                 <Button
                   className="btns-gen"
                   style={{ backgroundColor: '#6dd6d3' }}
-                  onClick={() => handleEditSubmit(item.firebaseKey)}
+                  onClick={() => {
+                    handleEditSubmit(item.firebaseKey);
+                    soundWood();
+                  }}
                 >
                   SAVE
                 </Button>
                 <Button
                   className="btns-gen"
                   style={{ backgroundColor: '#6dd6d3' }}
-                  onClick={() => (editItem())}
+                  onClick={() => {
+                    editItem();
+                    soundWood();
+                  }}
                 >
                   EDIT
                 </Button>
@@ -113,28 +123,54 @@ function ListCard({ listObj, onUpdate }) {
               <p
                 className="item"
                 style={{ textDecoration: item.done ? 'line-through' : 'none' }}
-                onClick={() => handleEdit(item.firebaseKey, item.label)}
+                onClick={() => {
+                  handleEdit(item.firebaseKey, item.label);
+                  soundWood();
+                }}
               >
                 {item.label}
               </p>
             )}
           </div>
         ))}
-        <Button className="add-btn" onClick={() => addItem(listObj.firebaseKey)}>
+        <Button
+          className="add-btn"
+          onClick={() => {
+            addItem(listObj.firebaseKey);
+            soundWood();
+          }}
+        >
           Add an Item
         </Button>
         <br />
         <Link href={`/lists/edit/${listObj.firebaseKey}`} passHref>
-          <Button className="btns-gen" style={{ backgroundColor: '#6dd6d3' }} variant="info">
+          <Button
+            className="btns-gen"
+            style={{ backgroundColor: '#6dd6d3' }}
+            variant="info"
+            onClick={soundWood}
+          >
             EDIT
           </Button>
         </Link>
         <Link href={`/lists/${listObj.firebaseKey}`} passHref>
-          <Button className="btns-gen" style={{ backgroundColor: '#6dd6d3' }} variant="info">
+          <Button
+            className="btns-gen"
+            style={{ backgroundColor: '#6dd6d3' }}
+            variant="info"
+            onClick={soundWood}
+          >
             VIEW
           </Button>
         </Link>
-        <Button className="btns-gen" style={{ backgroundColor: '#ff7783' }} onClick={deleteThisList}>
+        <Button
+          className="btns-gen"
+          style={{ backgroundColor: '#ff7783' }}
+          onClick={() => {
+            soundWood();
+            deleteThisList();
+          }}
+        >
           DELETE
         </Button>
       </Card.Body>

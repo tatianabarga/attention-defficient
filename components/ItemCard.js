@@ -3,9 +3,13 @@ import Card from 'react-bootstrap/Card';
 import Link from 'next/link';
 import { Button } from 'react-bootstrap';
 import { useRouter } from 'next/router';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import useSound from 'use-sound';
 import { deleteItem } from '../api/itemData';
+import woodSfx from '../utils/sounds/wood.mp3';
 
 export default function ItemCard({ itemObj }) {
+  const [soundWood] = useSound(woodSfx);
   const router = useRouter();
 
   const onUpdate = () => {
@@ -42,6 +46,7 @@ export default function ItemCard({ itemObj }) {
             className="btns-gen"
             style={{ backgroundColor: '#6dd6d3' }}
             variant="info"
+            onClick={soundWood}
           >
             EDIT
           </Button>
@@ -50,7 +55,10 @@ export default function ItemCard({ itemObj }) {
           className="btns-gen, m-2"
           style={{ backgroundColor: '#ff7783' }}
           variant="danger"
-          onClick={deleteThisItem}
+          onClick={() => {
+            soundWood();
+            deleteThisItem();
+          }}
         >
           DELETE
         </Button>
