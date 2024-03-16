@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import useSound from 'use-sound';
 import woodSfx from '../utils/sounds/wood.mp3';
-import yaySfx from '../utils/sounds/yay.mp3';
+import dingSfx from '../utils/sounds/ding.mp3';
 
 function TimerGen({
   expiryTimestamp,
@@ -14,14 +14,14 @@ function TimerGen({
   timerName,
 }) {
   const [soundWood] = useSound(woodSfx);
-  const [alert25] = useSound(yaySfx);
+  const [alert] = useSound(dingSfx);
   const {
     seconds,
     minutes,
     pause,
     resume,
     restart,
-  } = useTimer({ expiryTimestamp, onExpire: () => alert25() });
+  } = useTimer({ expiryTimestamp, onExpire: () => alert() });
 
   return (
     <div
