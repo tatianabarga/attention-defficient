@@ -44,7 +44,6 @@ export default function ItemCard({ itemObj }) {
         <Link href={`/items/edit/${itemObj.firebaseKey}`} passHref>
           <Button
             className="btns-gen"
-            style={{ backgroundColor: '#6dd6d3' }}
             variant="info"
             onClick={soundWood}
           >
@@ -52,8 +51,7 @@ export default function ItemCard({ itemObj }) {
           </Button>
         </Link>
         <Button
-          className="btns-gen, m-2"
-          style={{ backgroundColor: '#ff7783' }}
+          className="dlt-btn, m-2"
           variant="danger"
           onClick={() => {
             soundWood();

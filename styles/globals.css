@@ -38,6 +38,7 @@ body {
 
 .btns-gen {
   color: #F1FFFA;
+  background-color: #6dd6d3;
   border: none;
   margin: 10px;
   transition: 0.5s;
@@ -45,10 +46,34 @@ body {
 
 .btns-gen:hover {
   color: #F1FFFA;
-  border: none;
+  background-color: #6dd6d3;
+  border: solid;
+  border-width: 3px;
+  border-color: #f1fffa;
   margin: 10px;
   text-shadow: 0px 0px 10px #6dd6d3;
   box-shadow: 0 0 28px #6dd6d3;
+  font-weight: 600;
+}
+
+.dlt-btn {
+  color: #F1FFFA;
+  background-color: #ff7783;
+  border: none;
+  margin: 10px;
+  transition: 0.5s;
+}
+
+.dlt-btn:hover {
+  color: #f1fffa;
+  background-color: #ff7783;
+  border: solid;
+  border-width: 3px;
+  border-color: #f1fffa;
+  margin: 10px;
+  text-shadow: 0px 0px 10px #feb1b8;
+  box-shadow: 0 0 28px #feb1b8;
+  font-weight: 600;
 }
 
 .card {

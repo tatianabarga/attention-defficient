@@ -99,7 +99,6 @@ function ListCard({ listObj, onUpdate }) {
                 />
                 <Button
                   className="btns-gen"
-                  style={{ backgroundColor: '#6dd6d3' }}
                   onClick={() => {
                     handleEditSubmit(item.firebaseKey);
                     soundWood();
@@ -109,7 +108,6 @@ function ListCard({ listObj, onUpdate }) {
                 </Button>
                 <Button
                   className="btns-gen"
-                  style={{ backgroundColor: '#6dd6d3' }}
                   onClick={() => {
                     editItem();
                     soundWood();
@@ -146,7 +144,6 @@ function ListCard({ listObj, onUpdate }) {
         <Link href={`/lists/edit/${listObj.firebaseKey}`} passHref>
           <Button
             className="btns-gen"
-            style={{ backgroundColor: '#6dd6d3' }}
             variant="info"
             onClick={soundWood}
           >
@@ -156,7 +153,6 @@ function ListCard({ listObj, onUpdate }) {
         <Link href={`/lists/${listObj.firebaseKey}`} passHref>
           <Button
             className="btns-gen"
-            style={{ backgroundColor: '#6dd6d3' }}
             variant="info"
             onClick={soundWood}
           >
@@ -164,8 +160,7 @@ function ListCard({ listObj, onUpdate }) {
           </Button>
         </Link>
         <Button
-          className="btns-gen"
-          style={{ backgroundColor: '#ff7783' }}
+          className="dlt-btn"
           onClick={() => {
             soundWood();
             deleteThisList();
