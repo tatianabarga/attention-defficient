@@ -46,14 +46,20 @@ function TimerGen({
       <Button
         className="btns-gen"
         style={{ backgroundColor: btnColor }}
-        onClick={pause}
+        onClick={() => {
+          pause();
+          soundWood();
+        }}
       >
         PAUSE
       </Button>
       <Button
         className="btns-gen"
         style={{ backgroundColor: btnColor }}
-        onClick={resume}
+        onClick={() => {
+          resume();
+          soundWood();
+        }}
       >
         RESUME
       </Button>
