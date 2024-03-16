@@ -2,9 +2,10 @@ import React from 'react';
 import { useTimer } from 'react-timer-hook';
 import { Button } from 'react-bootstrap';
 import PropTypes from 'prop-types';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import useSound from 'use-sound';
 import woodSfx from '../utils/sounds/wood.mp3';
-import TimerEndedModal from './TimerEndedModal';
+import yaySfx from '../utils/sounds/yay.mp3';
 
 function TimerGen({
   expiryTimestamp,
@@ -12,15 +13,15 @@ function TimerGen({
   btnColor,
   timerName,
 }) {
+  const [soundWood] = useSound(woodSfx);
+  const [alert25] = useSound(yaySfx);
   const {
     seconds,
     minutes,
     pause,
     resume,
     restart,
-  } = useTimer({ expiryTimestamp, onExpire: () => TimerEndedModal('Focus') });
-
-  const soundWood = useSound(woodSfx);
+  } = useTimer({ expiryTimestamp, onExpire: () => alert25() });
 
   return (
     <div
