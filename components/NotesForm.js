@@ -58,7 +58,7 @@ export default function NotesForm({ obj, onUpdate }) {
           required
         />
       </Form.Group>
-      <Button className="btns-gen" style={{ backgroundColor: '#AF60FF' }} type="submit">Add Thought</Button>
+      <Button className="btns-gen" style={{ backgroundColor: '#6dd6d3' }} type="submit">Add Thought</Button>
     </Form>
   );
 }

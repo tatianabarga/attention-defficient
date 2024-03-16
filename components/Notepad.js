@@ -61,7 +61,7 @@ export default function Notepad() {
       </Button>
       <Button
         className="btns-gen"
-        style={{ backgroundColor: '#AF60FF' }}
+        style={{ backgroundColor: '#6dd6d3' }}
         onClick={clearNotepad}
       >
         Clear Notepad

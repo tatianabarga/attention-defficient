@@ -87,7 +87,7 @@ function ListForm({ obj }) {
           style={{
             color: '#F1FFFA',
             margin: '8px',
-            backgroundColor: '#3E9F95',
+            backgroundColor: '#6dd6d3',
             border: 'none',
           }}
           type="submit"

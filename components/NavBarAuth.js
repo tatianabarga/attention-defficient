@@ -15,13 +15,14 @@ export default function NavBarAuth() {
       <Container className="space">
         <Link passHref href="/">
           <Navbar.Brand className="nav-bar">
-            LETS GIT IT
+            <span className="attentiond">ATTENTION D</span>
+            <span className="efficient">EFFICIENT</span>
           </Navbar.Brand>
         </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Button className="btns-gen" style={{ backgroundColor: '#AF60FF' }} onClick={signOut}>
+            <Button className="btns-gen" style={{ backgroundColor: '#6dd6d3' }} onClick={signOut}>
               Sign Out
             </Button>
           </Nav>
