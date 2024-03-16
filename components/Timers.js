@@ -78,9 +78,9 @@ export default function Timers() {
         justifyContent: 'center',
       }}
     >
-      <TimerGen expiryTimestamp={time} plusSeconds={1500} btnColor="#FE4A4A" timerName="Focus (25min)" />
-      <TimerGen expiryTimestamp={time} plusSeconds={300} btnColor="#3E9F95" timerName="Short Break (5min)" />
-      <TimerGen expiryTimestamp={time} plusSeconds={1800} btnColor="#AF60FF" timerName="Long Break (30min)" />
+      <TimerGen expiryTimestamp={time} plusSeconds={1500} btnColor="#6dd6d3" timerName="Focus (25min)" />
+      <TimerGen expiryTimestamp={time} plusSeconds={300} btnColor="#6dd6d3" timerName="Short Break (5min)" />
+      <TimerGen expiryTimestamp={time} plusSeconds={1800} btnColor="#6dd6d3" timerName="Long Break (30min)" />
     </div>
   );
 }

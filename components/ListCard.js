@@ -83,10 +83,10 @@ function ListCard({ listObj, onUpdate }) {
               <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
                 <input
                   style={{
-                    color: '#96A6A0',
+                    color: '#fff1fa',
                     backgroundColor: '#34424A',
                     border: 'solid',
-                    borderColor: '#96A6A0',
+                    borderColor: '#fff1fa',
                     borderRadius: '10px',
                   }}
                   type="text"
@@ -95,14 +95,14 @@ function ListCard({ listObj, onUpdate }) {
                 />
                 <Button
                   className="btns-gen"
-                  style={{ backgroundColor: '#AF60FF' }}
+                  style={{ backgroundColor: '#6dd6d3' }}
                   onClick={() => handleEditSubmit(item.firebaseKey)}
                 >
                   SAVE
                 </Button>
                 <Button
                   className="btns-gen"
-                  style={{ backgroundColor: '#3E9F95' }}
+                  style={{ backgroundColor: '#6dd6d3' }}
                   onClick={() => (editItem())}
                 >
                   EDIT
@@ -112,7 +112,7 @@ function ListCard({ listObj, onUpdate }) {
               // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions
               <p
                 className="item"
-                style={{ color: '#96A6A0', textDecoration: item.done ? 'line-through' : 'none' }}
+                style={{ textDecoration: item.done ? 'line-through' : 'none' }}
                 onClick={() => handleEdit(item.firebaseKey, item.label)}
               >
                 {item.label}
@@ -125,16 +125,16 @@ function ListCard({ listObj, onUpdate }) {
         </Button>
         <br />
         <Link href={`/lists/edit/${listObj.firebaseKey}`} passHref>
-          <Button className="btns-gen" style={{ backgroundColor: '#3E9F95' }} variant="info">
+          <Button className="btns-gen" style={{ backgroundColor: '#6dd6d3' }} variant="info">
             EDIT
           </Button>
         </Link>
         <Link href={`/lists/${listObj.firebaseKey}`} passHref>
-          <Button className="btns-gen" style={{ backgroundColor: '#3E9F95' }} variant="info">
+          <Button className="btns-gen" style={{ backgroundColor: '#6dd6d3' }} variant="info">
             VIEW
           </Button>
         </Link>
-        <Button className="btns-gen" style={{ backgroundColor: '#FE4A4A' }} onClick={deleteThisList}>
+        <Button className="btns-gen" style={{ backgroundColor: '#ff7783' }} onClick={deleteThisList}>
           DELETE
         </Button>
       </Card.Body>

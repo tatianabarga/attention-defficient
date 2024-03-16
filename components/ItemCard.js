@@ -40,7 +40,7 @@ export default function ItemCard({ itemObj }) {
         <Link href={`/items/edit/${itemObj.firebaseKey}`} passHref>
           <Button
             className="btns-gen"
-            style={{ backgroundColor: '#3E9F95' }}
+            style={{ backgroundColor: '#6dd6d3' }}
             variant="info"
           >
             EDIT
@@ -48,7 +48,7 @@ export default function ItemCard({ itemObj }) {
         </Link>
         <Button
           className="btns-gen, m-2"
-          style={{ backgroundColor: '#FE4A4A' }}
+          style={{ backgroundColor: '#ff7783' }}
           variant="danger"
           onClick={deleteThisItem}
         >
