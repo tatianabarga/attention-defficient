@@ -51,7 +51,7 @@ export default function ItemCard({ itemObj }) {
           </Button>
         </Link>
         <Button
-          className="dlt-btn, m-2"
+          className="dlt-btn"
           variant="danger"
           onClick={() => {
             soundWood();
