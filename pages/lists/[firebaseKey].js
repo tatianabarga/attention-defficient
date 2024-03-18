@@ -25,10 +25,17 @@ export default function ViewList() {
 
   return (
     <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }} className="mt-5 d-flex flex-wrap">
-      <div className="text-white ms-5 details">
-        <h5>
-          {listDetails.label}
-        </h5>
+      <h4 style={{ color: '#f1fffa' }}>
+        {listDetails.label}
+      </h4>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          flexWrap: 'wrap',
+        }}
+        className="text-white ms-5 details"
+      >
         {
           items.map((item) => (
             <ItemCard
