@@ -144,7 +144,7 @@ function ItemForm({ obj }) {
         className="mb-2"
       >
         <ToggleButton
-          className="toggle-btn"
+          className="toggle-btns"
           id="tbg-radio-1"
           value={1}
           onChange={handleChangeCheck}
@@ -152,7 +152,7 @@ function ItemForm({ obj }) {
           Not Started
         </ToggleButton>
         <ToggleButton
-          className="toggle-btn"
+          className="toggle-btns"
           id="tbg-radio-2"
           value={2}
           onChange={handleChangeCheck}
@@ -160,7 +160,7 @@ function ItemForm({ obj }) {
           In Progress
         </ToggleButton>
         <ToggleButton
-          className="toggle-btn"
+          className="done"
           id="tbg-radio-3"
           value={3}
           onChange={handleChangeCheck}
@@ -170,7 +170,7 @@ function ItemForm({ obj }) {
       </ToggleButtonGroup>
 
       <Button
-        className="toggle-btn"
+        className="toggle-btns"
         type="submit"
       >
         {obj.firebaseKey ? 'Update' : 'Create'} Item
