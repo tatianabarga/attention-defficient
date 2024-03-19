@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useTimer } from 'react-timer-hook';
 import { Button } from 'react-bootstrap';
 import PropTypes from 'prop-types';
@@ -7,7 +7,7 @@ import useSound from 'use-sound';
 import woodSfx from '../utils/sounds/wood.mp3';
 import dingSfx from '../utils/sounds/ding.mp3';
 
-function TimerGen({
+function Timer({
   expiryTimestamp,
   plusSeconds,
   btnColor,
@@ -15,13 +15,14 @@ function TimerGen({
 }) {
   const [soundWood] = useSound(woodSfx);
   const [alert] = useSound(dingSfx);
+  const [btnPush, setBtnPush] = useState(false);
   const {
     seconds,
     minutes,
     pause,
     resume,
     restart,
-  } = useTimer({ expiryTimestamp, onExpire: () => alert() });
+  } = useTimer({ expiryTimestamp, onExpire: () => btnPush && alert() });
 
   return (
     <div
@@ -40,6 +41,7 @@ function TimerGen({
           time.setSeconds(time.getSeconds() + plusSeconds);
           restart(time);
           soundWood();
+          setBtnPush(true);
         }}
       >START
       </Button>
@@ -67,7 +69,7 @@ function TimerGen({
   );
 }
 
-TimerGen.propTypes = {
+Timer.propTypes = {
   expiryTimestamp: PropTypes.instanceOf(Date).isRequired,
   plusSeconds: PropTypes.number.isRequired,
   btnColor: PropTypes.string.isRequired,
@@ -84,9 +86,9 @@ export default function Timers() {
         justifyContent: 'center',
       }}
     >
-      <TimerGen expiryTimestamp={time} plusSeconds={1500} btnColor="#6dd6d3" timerName="Focus (25min)" />
-      <TimerGen expiryTimestamp={time} plusSeconds={300} btnColor="#6dd6d3" timerName="Short Break (5min)" />
-      <TimerGen expiryTimestamp={time} plusSeconds={1800} btnColor="#6dd6d3" timerName="Long Break (30min)" />
+      <Timer expiryTimestamp={time} plusSeconds={1500} btnColor="#6dd6d3" timerName="Focus (25min)" />
+      <Timer expiryTimestamp={time} plusSeconds={300} btnColor="#6dd6d3" timerName="Short Break (5min)" />
+      <Timer expiryTimestamp={time} plusSeconds={1800} btnColor="#6dd6d3" timerName="Long Break (30min)" />
     </div>
   );
 }
