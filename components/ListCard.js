@@ -41,7 +41,7 @@ function ListCard({ listObj, onUpdate }) {
     const payload = {
       done: false,
       inProgress: false,
-      label: 'new item',
+      label: 'click to change',
       listId: listKey,
       notStarted: true,
       uid: user.uid,

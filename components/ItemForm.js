@@ -4,9 +4,11 @@ import PropTypes from 'prop-types';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
 import { Button, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
+import useSound from 'use-sound';
 import { createItem, updateItem } from '../api/itemData';
 import { useAuth } from '../utils/context/authContext';
 import { getLists } from '../api/listData';
+import yaySfx from '../utils/sounds/yay.mp3';
 
 const initialState = {
   label: '',
@@ -17,6 +19,7 @@ const initialState = {
 };
 
 function ItemForm({ obj }) {
+  const [soundYay] = useSound(yaySfx);
   const [formInput, setFormInput] = useState({ ...initialState, ...obj });
   const router = useRouter();
   const { user } = useAuth();
@@ -164,6 +167,7 @@ function ItemForm({ obj }) {
           id="tbg-radio-3"
           value={3}
           onChange={handleChangeCheck}
+          onClick={soundYay}
         >
           Done
         </ToggleButton>
