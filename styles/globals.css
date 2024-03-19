@@ -41,15 +41,13 @@ body {
   background-color: #6dd6d3;
   border: none;
   margin: 10px;
-  transition: 0.5s;
+  transition: 0.15s;
 }
 
 .btns-gen:hover {
   color: #F1FFFA;
   background-color: #6dd6d3;
-  border: solid;
-  border-width: 3px;
-  border-color: #f1fffa;
+  border: 3px solid #f1fffa;
   margin: 10px;
   text-shadow: 0px 0px 10px #6dd6d3;
   box-shadow: 0 0 28px #6dd6d3;
@@ -61,15 +59,13 @@ body {
   background-color: #ff7783;
   border: none;
   margin: 10px;
-  transition: 0.5s;
+  transition: 0.15s;
 }
 
 .dlt-btn:hover {
   color: #f1fffa;
   background-color: #ff7783;
-  border: solid;
-  border-width: 3px;
-  border-color: #f1fffa;
+  border: 3px solid #f1fffa;
   margin: 10px;
   text-shadow: 0px 0px 10px #feb1b8;
   box-shadow: 0 0 28px #feb1b8;
@@ -87,8 +83,7 @@ body {
   color: #96A6A0;
   margin: 8px;
   background-color: #34424A;
-  border: solid;
-  border-color: #96A6A0;
+  border: solid #96A6A0;
   transition: 0.5s;
 }
 
@@ -97,18 +92,15 @@ body {
   box-shadow: 0 0 28px #fffabe;
   margin: 8px;
   background-color: #34424A;
-  border: solid;
-  border-color: #fff79b;
+  border: solid #fff79b;
   text-shadow: 0px 0px 10px #fffabe;
 }
 
 .form {
   width: 500px;
   background-color: #34424A;
-  border: solid;
-  border-color: #34424A;
+  border: 9px solid #34424A;
   border-radius: 10px;
-  border-width: 9px;
   padding: 20px;
   flex-direction: column;
   display: flex;
