@@ -84,12 +84,7 @@ function ListForm({ obj }) {
         </FloatingLabel>
 
         <Button
-          style={{
-            color: '#F1FFFA',
-            margin: '8px',
-            backgroundColor: '#6dd6d3',
-            border: 'none',
-          }}
+          className="btns-gen"
           type="submit"
         >
           {obj.firebaseKey ? 'Update' : 'Create'} List
