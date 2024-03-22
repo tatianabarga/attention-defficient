@@ -1,7 +1,7 @@
 Attention dEfficient
 
 All of your tools in one convenient screen
-<img width="1043" alt="home screen" src="../tatianabarga-capstone/utils/images/image-5.png">
+<img width="1043" alt="home screen" src="utils/images/image-5.png">
 <!-- ![home screen](../tatianabarga-capstone/utils/images/image-5.png)
 Create lists -->
 ![create new list](image-1.png)
