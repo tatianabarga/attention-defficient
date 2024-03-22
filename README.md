@@ -1,7 +1,7 @@
 Attention dEfficient
 
 All of your tools in one convenient screen
-![home screen](image-5.png)
+![home screen](../tatianabarga-capstone/utils/images/image-5.png)
 Create lists
 ![create new list](image-1.png)
 Streamlined to-do item creation 
