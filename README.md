@@ -2,15 +2,14 @@ Attention dEfficient
 
 All of your tools in one convenient screen
 <img width="1043" alt="home screen" src="utils/images/image-5.png">
-<!-- ![home screen](../tatianabarga-capstone/utils/images/image-5.png)
-Create lists -->
-![create new list](image-1.png)
+Create lists
+<img width="1043" alt="create new list" src="utils/images/image-1.png">
 Streamlined to-do item creation 
-![add items](image-2.png)
+<img width="1043" alt="add items" src="utils/images/image-2.png">
 Track status of to-to items
-![edit item](image-3.png)
+<img width="1043" alt="edit item" src="utils/images/image-3.png">
 See all items with details in single list view
-![single list view](image-4.png)
+<img width="1043" alt="single list view" src="utils/images/image-4.png">
 
  Overview:
  Attention dEfficient is a productivity manager designed to provide an organized, focus promoting environment to streamline user workflow. This web app is designed for the busy professional, a student with deadlines, freelancer managing multiple projects, or anyone that could benefit from a time management and goal oriented efficiency enhancer. 
@@ -27,7 +26,7 @@ https://www.joshwcomeau.com/react/announcing-use-sound-react-hook/#installation-
 https://www.npmjs.com/package/react-timer-hook?activeTab=code
 
 Contributors:
- Tatiana Barga https://github.com/tatianabarga
+[Tatiana Barga] (https://github.com/tatianabarga)
 
 Links and resources:
 Project Board: https://github.com/users/tatianabarga/projects/4/views/1
