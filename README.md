@@ -37,7 +37,7 @@ This app uses:
 
 ### Links and resources:
 - [Project Board](https://github.com/users/tatianabarga/projects/4/views/1)
-- [Deplolyed Project](https://attention-defficient.netlify.app/)
+- [Deployed Project](https://attention-defficient.netlify.app/)
 - [ERD](https://drawsql.app/teams/tatiana-bargas-team/diagrams/capstone)
 - [Wireframe](https://www.figma.com/file/6PlL8qdAZ5fsyStEtBT873/attention-defficient?type=design&node-id=2-3&mode=design&t=CBqLkDDjOK1Bj9Ha-0)
 - Loom walkthrough
@@ -52,8 +52,6 @@ This app uses:
 ___
 ### Getting Started
 ##### 1. Make sure YOUR github account is selected in the dropdown and name your project
-<img width="763" alt="Screen Shot 2022-07-06 at 12 54 48 PM" src="https://user-images.githubusercontent.com/29741570/177613126-dd38f678-7553-4f27-8a4a-75680f14d71e.png">
-
 ##### 2. Clone your new repo to your local machine
 ##### 3. Go to the **NEXT** section
 
