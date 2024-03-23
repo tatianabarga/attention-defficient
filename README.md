@@ -40,7 +40,7 @@ This app uses:
 - [Deployed Project](https://attention-defficient.netlify.app/)
 - [ERD](https://drawsql.app/teams/tatiana-bargas-team/diagrams/capstone)
 - [Wireframe](https://www.figma.com/file/6PlL8qdAZ5fsyStEtBT873/attention-defficient?type=design&node-id=2-3&mode=design&t=CBqLkDDjOK1Bj9Ha-0)
-- Loom walkthrough
+- [Loom walkthrough](https://www.loom.com/share/52a9056289e348a79fcf96eaf5416639?sid=5524a2a5-0977-49bb-8361-5246733af157)
 
 
 ## How to download/clone/install and run the app:
