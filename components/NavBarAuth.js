@@ -25,6 +25,11 @@ export default function NavBarAuth() {
             <Button className="btns-gen" style={{ backgroundColor: '#6dd6d3' }} onClick={signOut}>
               Sign Out
             </Button>
+            <Link passHref href="/aboutme">
+              <Button className="btns-gen" style={{ backgroundColor: '#6dd6d3' }}>
+                Who Made This?
+              </Button>
+            </Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

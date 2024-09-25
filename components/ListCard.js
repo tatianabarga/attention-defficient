@@ -19,6 +19,7 @@ import woodSfx from '../utils/sounds/wood.mp3';
 function ListCard({ listObj, onUpdate }) {
   const [soundWood] = useSound(woodSfx);
   const [items, setItems] = useState([]);
+  // const [filteredItems, setFilteredItems] = useState;
   const [editingItemKey, setEditingItemKey] = useState(null);
   const [editItemLabel, setEditItemLabel] = useState('');
   const { user } = useAuth();
