@@ -26,7 +26,10 @@ function ListCard({ listObj, onUpdate }) {
   const router = useRouter();
 
   useEffect(() => {
-    getItemsByList(listObj.firebaseKey).then(setItems);
+    getItemsByList(listObj.firebaseKey).then((fetchedItems) => {
+      const sortedItems = fetchedItems.sort((a, b) => a.label.localeCompare(b.label));
+      setItems(sortedItems);
+    });
   }, [onUpdate, listObj.firebaseKey]);
 
   const deleteThisList = () => {
