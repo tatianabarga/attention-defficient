@@ -31,8 +31,7 @@ function ItemForm({ obj }) {
 
   useEffect(() => {
     getLists(user.uid).then(setLists);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [user]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
