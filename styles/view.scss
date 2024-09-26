@@ -1,0 +1,40 @@
+@import "./variables.scss";
+
+.main-container {
+  display: flex;
+  flex-grow: 2;
+}
+
+.side-panel {
+  flex-grow: 1;
+}
+
+.content-container {
+  flex-grow: 3;
+}
+
+.space {
+  justify-content: space-between;
+}
+
+.view {
+  flex-direction: column;
+  justify-content: center;
+}
+
+.div {
+  margin: 1%;
+}
+
+.view-header {
+  font-size: 250%;
+  color: white;
+  font-weight: 200;
+  margin: 2%;
+}
+
+.view-subheader {
+  font-size: 150%;
+  color: white;
+  font-weight: 200;
+}

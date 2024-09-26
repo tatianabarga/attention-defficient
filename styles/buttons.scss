@@ -1,0 +1,161 @@
+@import "./variables";
+
+.btns-gen {
+  color: $white;
+  background-color: $blue;
+  border: none;
+  margin: 10px;
+  transition: 0.15s;
+}
+
+.btns-gen:hover {
+  color: $white;
+  background-color: $blue;
+  border: 3px solid $white;
+  margin: 10px;
+  text-shadow: 0px 0px 10px $blue;
+  box-shadow: 0 0 28px $blue;
+  font-weight: 600;
+}
+
+.dlt-btn {
+  color: $white;
+  background-color: $red;
+  border: none;
+  margin: 10px;
+  transition: 0.15s;
+}
+
+.dlt-btn:hover {
+  color: $white;
+  background-color: $red;
+  border: 3px solid $white;
+  margin: 10px;
+  text-shadow: 0px 0px 10px $red-shadow;
+  box-shadow: 0 0 28px $red-shadow;
+  font-weight: 600;
+}
+
+.add-btn {
+  color: $light;
+  margin: 8px;
+  background-color: $midtone;
+  border: solid $light;
+  transition: 0.5s;
+}
+
+.add-btn:hover {
+  color: $yellow;
+  box-shadow: 0 0 28px $yellow-glow;
+  margin: 8px;
+  background-color: $midtone;
+  border: solid $yellow;
+  text-shadow: 0px 0px 10px $yellow-glow;
+}
+
+.toggle-btns {
+  color: $white;
+  margin: 8px;
+  background-color: $blue;
+  border: none;
+}
+
+.toggle-btns:hover {
+  color: $white;
+  margin: 8px;
+  background-color: $blue;
+  border: none;
+  text-shadow: 0px 0px 10px $light;
+  box-shadow: 0 0 28px $blue;
+}
+
+.done {
+  color: $white;
+  margin: 8px;
+  background-color: $blue;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.done:active {
+  transform: scale(0.96);
+}
+
+.done:before,
+.done:after {
+  position: absolute;
+  content: "";
+  width: 150%;
+  left: 50%;
+  height: 100%;
+  transform: translateX(-50%);
+  z-index: -1000;
+  background-repeat: no-repeat;
+}
+
+.done:hover:before {
+  top: -70%;
+  background-image: radial-gradient(circle, $yellow-glow 20%, transparent 20%),
+    radial-gradient(circle, transparent 20%, #0059b8 20%, transparent 30%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #0059b8 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, $yellow-glow 15%, transparent 20%),
+    radial-gradient(circle, $yellow-glow 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, $blue 20%, transparent 20%),
+    radial-gradient(circle, $yellow-glow 20%, transparent 20%);
+  background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%,
+    10% 10%, 18% 18%;
+  background-position: 50% 120%;
+  animation: greentopBubbles 0.6s ease;
+}
+
+@keyframes greentopBubbles {
+  0% {
+    background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%,
+      40% 90%, 55% 90%, 70% 90%;
+  }
+
+  50% {
+    background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%,
+      50% 50%, 65% 20%, 90% 30%;
+  }
+
+  100% {
+    background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%,
+      50% 40%, 65% 10%, 90% 20%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+
+@keyframes greenbottomBubbles {
+  0% {
+    background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%,
+      70% -10%, 70% 0%;
+  }
+
+  50% {
+    background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%,
+      105% 0%;
+  }
+
+  100% {
+    background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%,
+      110% 10%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+
+.done:hover::after {
+  bottom: -70%;
+  background-image: radial-gradient(circle, #0059b8 20%, transparent 20%),
+    radial-gradient(circle, #0059b8 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, $yellow-glow 15%, transparent 20%),
+    radial-gradient(circle, $yellow-glow 20%, transparent 20%),
+    radial-gradient(circle, $blue 20%, transparent 20%),
+    radial-gradient(circle, $blue 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%);
+  background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 20% 20%, 18% 18%;
+  background-position: 50% 0%;
+  animation: greenbottomBubbles 0.6s ease;
+}
