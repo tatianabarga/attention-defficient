@@ -13,7 +13,7 @@ export default function ItemCard({ itemObj }) {
   const router = useRouter();
 
   const onUpdate = () => {
-    router.push('/');
+    router.push(`/lists/${itemObj.listId}`);
   };
 
   const deleteThisItem = () => {
@@ -72,5 +72,6 @@ ItemCard.propTypes = {
     notStarted: PropTypes.bool,
     inProgress: PropTypes.bool,
     done: PropTypes.bool,
+    listId: PropTypes.string,
   }).isRequired,
 };
