@@ -1,0 +1,30 @@
+@import './variables';
+
+.timer-digits {
+  font-size: 30px;
+  color: $white;
+  margin: 10px;
+}
+
+.note-item {
+  color: $light;
+  background-color: $midtone;
+  position: relative;
+}
+
+.item {
+  color:$light
+}
+
+.item:hover {
+  color: $yellow;
+  text-shadow: 0px 0px 10px $yellow-glow;
+}
+
+.attentiond {
+  color: $white;
+}
+
+.efficient {
+  color: $blue;
+}
