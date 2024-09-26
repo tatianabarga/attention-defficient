@@ -34,25 +34,10 @@ export default function Aboutme() {
           <a href="https://github.com/tatianabarga" target="_blank" rel="noopener noreferrer">
             <Button className="btns-gen">
               Check out my GitHub
-              {/* <span className="margin">
-                <Image width="20%" height="20%" src="/../public/githublogo.png" />
-              </span> */}
             </Button>
           </a>
         </span>
       </div>
-      {/* <a className="clear-style view-body" href="https://github.com/tatianabarga" target="_blank" rel="noopener noreferrer">
-        <button type="button" className="btn-github">
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 16 16"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          />
-          Check out my GitHub
-        </button>
-      </a> */}
       <div className="view-subheader div">See my other projects:</div>
       <div className="div">
         <span>
