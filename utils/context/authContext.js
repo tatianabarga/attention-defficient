@@ -13,7 +13,7 @@ const AuthContext = createContext();
 
 AuthContext.displayName = 'AuthContext'; // Context object accepts a displayName string property. React DevTools uses this string to determine what to display for the context. https://reactjs.org/docs/context.html#contextdisplayname
 
-const AuthProvider = (props) => {
+function AuthProvider(props) {
   const [user, setUser] = useState(null);
 
   // there are 3 states for the user:
@@ -42,7 +42,7 @@ const AuthProvider = (props) => {
   );
 
   return <AuthContext.Provider value={value} {...props} />;
-};
+}
 const AuthConsumer = AuthContext.Consumer;
 
 const useAuth = () => {

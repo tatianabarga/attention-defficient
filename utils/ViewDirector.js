@@ -6,7 +6,7 @@ import Signin from '../components/Signin';
 import NavBarAuth from '../components/NavBarAuth';
 import Notepad from '../components/Notepad';
 
-const ViewDirectorBasedOnUserAuthStatus = ({ component: Component, pageProps }) => {
+function ViewDirectorBasedOnUserAuthStatus({ component: Component, pageProps }) {
   const { user, userLoading } = useAuth();
 
   if (userLoading) {
@@ -31,7 +31,7 @@ const ViewDirectorBasedOnUserAuthStatus = ({ component: Component, pageProps }) 
   }
 
   return <Signin />;
-};
+}
 
 export default ViewDirectorBasedOnUserAuthStatus;
 
