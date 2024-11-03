@@ -27,7 +27,6 @@ function Home() {
         }}
         className="d-flex flex-wrap"
       >
-        <></>
         {lists.map((list) => (
           <ListCard key={list.firebaseKey} listObj={list} onUpdate={getAllTheLists} />
         ))}
