@@ -40,7 +40,7 @@ export default function Notepad() {
   };
 
   return (
-    <Card className="form" style={{ borderWidth: '10px', borderColor: '#34424A', width: '240px' }}>
+    <Card className="form" style={{ borderWidth: '10px', borderColor: '#1D2C33', width: '240px' }}>
       <h2 style={{ color: '#F1FFFA', fontWeight: '400', fontSize: 'x-large' }}>Stray Thoughts</h2>
       <ListGroup>
         {
