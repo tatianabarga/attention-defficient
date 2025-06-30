@@ -108,7 +108,7 @@ function ListCard({ listObj, onUpdate }) {
                     soundWood();
                   }}
                 >
-                  SAVE
+                  Save
                 </Button>
                 <Button
                   className="btns-gen"
@@ -117,7 +117,7 @@ function ListCard({ listObj, onUpdate }) {
                     soundWood();
                   }}
                 >
-                  EDIT
+                  Edit
                 </Button>
               </div>
             ) : (
@@ -151,7 +151,7 @@ function ListCard({ listObj, onUpdate }) {
             variant="info"
             onClick={soundWood}
           >
-            EDIT
+            Edit
           </Button>
         </Link>
         <Link href={`/lists/${listObj.firebaseKey}`} passHref>
@@ -160,7 +160,7 @@ function ListCard({ listObj, onUpdate }) {
             variant="info"
             onClick={soundWood}
           >
-            VIEW
+            View
           </Button>
         </Link>
         <Button
@@ -170,7 +170,7 @@ function ListCard({ listObj, onUpdate }) {
             deleteThisList();
           }}
         >
-          DELETE
+          Delete
         </Button>
       </Card.Body>
     </Card>

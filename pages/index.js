@@ -33,7 +33,7 @@ function Home() {
         <Card className="card">
           <Card.Body style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <Link href="/lists/new" passHref>
-              <Button className="add-btn" style={{ color: '#F1FFFA' }}>
+              <Button className="add-btn">
                 Add A List
               </Button>
             </Link>

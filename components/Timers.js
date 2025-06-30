@@ -43,7 +43,7 @@ function Timer({
           soundWood();
           setBtnPush(true);
         }}
-      >START
+      >Start
       </Button>
       <Button
         className="btns-gen"
@@ -53,7 +53,7 @@ function Timer({
           soundWood();
         }}
       >
-        PAUSE
+        Pause
       </Button>
       <Button
         className="btns-gen"
@@ -63,7 +63,7 @@ function Timer({
           soundWood();
         }}
       >
-        RESUME
+        Resume
       </Button>
     </div>
   );
