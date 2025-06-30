@@ -34,7 +34,7 @@ function Home() {
           <Card.Body style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <Link href="/lists/new" passHref>
               <Button className="add-btn">
-                Add A List
+                Add a List
               </Button>
             </Link>
           </Card.Body>
